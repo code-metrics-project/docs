@@ -1,0 +1,25 @@
+name: site
+on:
+  push:
+    branches:
+      - main
+      - develop
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4.7.1
+        with:
+          python-version: 3.x
+
+      - run: pip install \
+               mkdocs-material \
+               mkdocs-mermaid2-plugin
+
+      - name: Build static site
+        run: mkdocs build
+
+      - name: Deploy to GitHub Pages
+        if: ${{ github.ref_name == 'main' }}
+        run: mkdocs gh-deploy --force
