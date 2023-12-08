@@ -1,0 +1,36 @@
+theme:
+  name: 'material'
+  logo: img/codemetrics_logo_small.png
+  favicon: img/favicon.png
+site_name: Code Metrics
+
+docs_dir: /docs/docs
+site_dir: /www
+
+plugins:
+  - search
+  - mermaid2
+
+nav:
+  - Introduction: 'README.md'
+  - Getting started: 'getting_started.md'
+  - Configuration guide: 'configuration.md'
+  - Feature support: 'features.md'
+
+  - Query types:
+    - Bug culprits: 'query_bug_culprits.md'
+    - Bugs: 'query_bugs.md'
+    - Pipelines: 'query_pipelines.md'
+    - Repository churn: 'query_repo_churn.md'
+    - Source code metrics: 'query_source_code.md'
+    - Custom queries: 'custom_queries.md'
+
+  - Configuration:
+    - Overview: 'configuration.md'
+    - Datastores: 'datastores.md'
+    - Secrets management: 'secret_management.md'
+    - Authentication: 'authentication.md'
+
+  - Other:
+    - Architecture: 'architecture.md'
+    - Prediction: 'prediction.md'
