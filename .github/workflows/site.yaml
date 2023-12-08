@@ -18,8 +18,10 @@ jobs:
                mkdocs-mermaid2-plugin
 
       - name: Build static site
+        working-directory: src
         run: mkdocs build
 
       - name: Deploy to GitHub Pages
         if: ${{ github.ref_name == 'main' }}
+        working-directory: src
         run: mkdocs gh-deploy --force
