@@ -1,6 +1,6 @@
 theme:
   name: 'material'
-  logo: img/codemetrics_logo_small.png
+  logo: img/codemetrics_logo_plain_transparent.png
   favicon: img/favicon.png
 site_name: Code Metrics
 
