@@ -4,9 +4,6 @@ theme:
   favicon: img/favicon.png
 site_name: Code Metrics
 
-docs_dir: /docs/docs
-site_dir: /www
-
 plugins:
   - search
   - mermaid2
