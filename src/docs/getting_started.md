@@ -4,8 +4,8 @@ You can run Code Metrics in a number of ways:
 
 - Docker or Docker Compose
 - AWS Lambda
-- Using Node.js directly
 - Kubernetes
+- Using Node.js directly
 
 ## Docker Compose
 
@@ -13,13 +13,11 @@ This method uses [Docker Compose](https://docs.docker.com/compose/install/).
 
 To start, clone the repository then run:
 
-    docker-compose up --build
-
-(or `docker compose up --build` if you are using Compose CLI v2).
+    docker compose up --build
 
 > Note: if you want to run with mocked backend services, amend the Compose command as follows:
 > ```
-> docker-compose -f docker-compose.yaml -f backend/mocks/docker-compose-mocks.yaml up --build
+> docker compose -f docker-compose.yaml -f backend/mocks/docker-compose-mocks.yaml up --build
 > ```
 
 Access:
@@ -27,9 +25,13 @@ Access:
 - Access the web UI at http://localhost:3001
 - The API runs at http://localhost:3000
 
-## Kubernetes
-
-Helm instructions are here: [Helm.md](./helm.md)
+> **Note**
+> To change the config path, set the `CONFIG_DIR` environment variable.
+> 
+> For example:
+> ```
+> CONFIG_DIR=/path/to/config/files docker compose up --build
+> ```
 
 ## AWS Lambda
 
@@ -40,6 +42,12 @@ Download the `codemetrics-api.zip` file. See the example [template.yaml](../back
 The frontend web UI is a static site, so can be hosted anywhere. You can find the latest version of the web UI on the [Releases page](https://github.com/DeloitteDigitalUK/code-metrics/releases).
 
 Download the `codemetrics-ui.zip` file and host it on a static site. You will need to set the `apiBaseUrl` variable in `config.json` to point to the API endpoint.
+
+## Kubernetes
+
+The Code Metrics Docker containers can also be run on Kubernetes.  
+
+See the [instructions for using Helm](./helm.md).
 
 ## Using Node.js directly
 
@@ -57,12 +65,6 @@ Download the `codemetrics-ui.zip` file and unzip it. You will need to set the `a
 
 ---
 
-## Changing config path
+## Next steps
 
-To use a different configuration directory, under `backend/config`, set the `CONFIG_DIR` environment variable:
-
-    CONFIG_DIR=/backend/config/somedir docker compose up --build
-
-## CORS settings
-
-If you need to adjust the origin of the web UI, edit the `CORS_ORIGIN` environment variable in the `backend` service in `docker-compose.yaml`.
+Learn [how to configure Code Metrics](./configuration.md) for your team.

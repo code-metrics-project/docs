@@ -1,5 +1,9 @@
 # Workloads
 
+This section is part of the `workload-config.yaml` configuration file. See the [configuration overview](./configuration.md) for further information.
+
+## Overview
+
 A workload represents one or more repositories, in one or more repository groups. With this concept, you can model a team, an application or a single component.
 
 ## Examples
@@ -139,8 +143,8 @@ It provides a view of:
 - test coverage
 - pipeline success rate
 
-![Summary of workload](img/workload_dashboard.png)
+![Summary of workload](./img/workload_dashboard.png)
 
 You can also view a list of all workloads:
 
-![List workloads](img/workloads_list.png)
+![List workloads](./img/workloads_list.png)
