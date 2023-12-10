@@ -1,8 +1,11 @@
+site_name: Code Metrics
+
 theme:
   name: 'material'
   logo: img/codemetrics_logo_plain_transparent.png
   favicon: img/favicon.png
-site_name: Code Metrics
+  palette:
+    primary: black
 
 plugins:
   - search
@@ -29,6 +32,8 @@ nav:
     - Secrets management: 'secret_management.md'
     - Authentication: 'authentication.md'
 
+  - Architecture: 'architecture.md'
+
   - Other:
-    - Architecture: 'architecture.md'
     - Prediction: 'prediction.md'
+    - Release process: 'release.md'

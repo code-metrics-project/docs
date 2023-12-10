@@ -5,7 +5,7 @@ There are two primary files to configure Code Metrics.
 - **remote-config.yaml** - controls how you connect to your external systems
 - **workload-config.yaml** - how you represent your teams/repositories
 
-These files model how your teams are organised (including rules and thresholds), and contain details to interact securely with the required data sources for Code Quality (e.g. Sonar), Project Management (e.g. Jira) and Code Management (e.g. GitHub).
+These files model how your teams are organised, and contain settings to interact securely with external data sources for Code Quality (e.g. Sonar), Project Management (e.g. Jira) and Code Management (e.g. GitHub).
 
 ### External Systems (remote-config.yaml)
 

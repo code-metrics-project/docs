@@ -1,6 +1,6 @@
 # Workloads
 
-This section is part of the `workload-config.yaml` configuration file. See the [configuration overview](./configuration.md) for further information.
+This section describes the `workload-config.yaml` configuration file. See the [configuration overview](./configuration.md) for further information.
 
 ## Overview
 

@@ -12,40 +12,40 @@ Code Metrics queries external systems and presents an analysis of the data acros
 
 ```mermaid
     C4Context
-    title System Context diagram for Code Metrics tool
+    title System Context diagram for Code Metrics
+    
+    Boundary(b4, "Code quality tool", "SonarQube/SonarCloud") {
+        System_Ext(QualityMetrics, "Code quality metrics", "Metadata on code coverage, complexity, codebase size.")
+    }
+    
+    Boundary(b2, "Code management tool", "GitHub/Bitbucket/Azure") {
+        SystemDb_Ext(RepoMetrics, "Repository metrics", "List of file change types (e.g. lines added/removed).")
+        SystemDb_Ext(BuildMetrics, "Build job metrics", "Outcomes (e.g. success/fail) and duration of jobs.")
+    }
+
+    Boundary(b3, "Project management tool", "Jira/Azure") {
+        SystemDb_Ext(Bugs, "Bug tickets")
+        SystemDb_Ext(Incidents, "Incident tickets")
+    }
 
     Enterprise_Boundary(b0, "Your organisation") {
         Person(engineer, "Engineering Lead", "An engineering leader in your organisation.")
-        
+
         Boundary(b1, "Cloud Account", "") {
             System(CodeMetricsTool, "Code Metrics Tool", "Aggregates and analyses software metrics.")
             SystemDb(CodeMetricsCache, "Code Metrics cache", "Caches data to avoid hitting external rate limits")
         }
     }
-    
-    System_Ext(Sonar, "Sonar", "Metadata on code coverage, complexity, codebase size.")
-
-    Boundary(b2, "GitHub") {
-        SystemDb_Ext(GHRepoMetrics, "Repository metrics", "List of file change types (e.g. lines added/removed).")
-        SystemDb_Ext(GHBuildMetrics, "Build job metrics", "Outcomes (e.g. success/fail) and duration of jobs.")
-    }
-
-    Boundary(b3, "Jira") {
-        SystemDb_Ext(JiraBugs, "Bug tickets")
-        SystemDb_Ext(Incidents, "Incident tickets")
-    }
 
     Rel(engineer, CodeMetricsTool, "Uses")
     Rel(CodeMetricsTool, CodeMetricsCache, "Uses")
-    Rel(CodeMetricsTool, Sonar, "Queries")
-    Rel(CodeMetricsTool, GHRepoMetrics, "Queries")
-    Rel(CodeMetricsTool, GHBuildMetrics, "Queries")
-    Rel(CodeMetricsTool, JiraBugs, "Queries")
+    Rel(CodeMetricsTool, QualityMetrics, "Queries")
+    Rel(CodeMetricsTool, RepoMetrics, "Queries")
+    Rel(CodeMetricsTool, BuildMetrics, "Queries")
+    Rel(CodeMetricsTool, Bugs, "Queries")
     Rel(CodeMetricsTool, Incidents, "Queries")
 
-    UpdateRelStyle(engineer, CodeMetricsTool, $textColor="blue", $lineColor="blue", $offsetX="5")
-
-    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="2")
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="3")
 ```
 
 ## Deployment diagram
@@ -57,7 +57,7 @@ An example deployment using AWS Lambda (backend), CloudFront/S3 (frontend) and D
 
 ```mermaid
     C4Deployment
-    title Deployment Diagram for Code Metrics tool
+    title Deployment Diagram for Code Metrics
     
     Deployment_Node(browser, "Web Browser", "") {
         Container(spa, "Single Page Application", "HTML, CSS, JavaScript", "Front-end user interface to the tool.")

@@ -54,9 +54,9 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 
 ## Design and build
 
-- [Release](./release.md)
+- [Release process](./release.md)
 - [Mocks](../backend/mocks/README.md)
 
 ## Feature support
 
-See a list of [features](./features.md) supported by third party tool.
+See a list of [supported features](./features.md) for third party tools.
