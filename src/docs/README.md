@@ -1,15 +1,15 @@
 # <img alt="Code Metrics logo" src="img/codemetrics_logo_small.png" width="384em"/>
 
-As your codebase grows, so does the complexity of managing it. As an engineering leader with many code repositories or multiple product teams it is challenging to oversee quality and spot where to focus your time. At scale it is hard to spot bad trends before they manifest as risks and identify areas for improvement.
+As your codebase grows, so does the complexity of managing it. As an engineering leader overseeing many code repositories or multiple product teams it is challenging to know where to focus attention. At scale, it is especially hard to spot bad trends before they manifest as risks and identify areas for improvement.
 
 ## Problems at scale
 
 Managing a large technical solution requires metrics from across the phases of the delivery lifecycle. Meaningful understanding of the quality and risk in your codebase includes metrics about your source code, your CI/CD pipeline and your delivery process and service (such as pull requests and bugs).
 
-This poses a number of problems:
+In most organisations, this poses common problems:
 
 - Metrics sit across separate systems: your Code quality tool (Sonar), project management tool (Jira or Azure), and source hosting platform (GitHub, Bitbucket or Azure).
-- You need to correlate the data from across these sources to help identify issues or trends that are difficult to spot on a per-tool, or per-repository basis.
+- You need to correlate the data from across sources to help identify issues or trends that are difficult to spot on a per-tool, or per-repository basis.
 - There is no easy mechanism to aggregate and query this data for technical leadership.
 
 ## How Code Metrics helps
