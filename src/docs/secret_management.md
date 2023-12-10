@@ -2,6 +2,9 @@
 
 Typically, the systems you query with Code Metrics require authentication. You configure how to access these systems using the `remote-config.yaml` / `remote-config.json` files in your configuration directory.
 
+> **Note**
+> See the [configuration guide](./configuration.md) for more details about the `remote-config.yaml` file.
+
 It is good practice to avoid putting sensitive values, such as API keys, passwords etc. in these files, and instead externalise them to a safe place.
 
 ## Secret placeholders
@@ -91,3 +94,23 @@ This example IAM policy scopes read access to secrets with names in the format `
 </details>
 
 > To refer to these secrets in your configuration, use the ID of the secret in Secrets Manager as the secret name in the placeholder, such as: `${secret.some/secret}`
+
+#### Architectural overview
+
+```mermaid
+    C4Deployment
+    title Deployment Diagram for Code Metrics Secrets Manager implementation
+
+    Deployment_Node(aws, "AWS account", "") {
+        Deployment_Node(dn, "API backend", "Node.js") {
+            Container(api, "API application", "", "Provides Code Metrics functionality to the frontend.")
+        }
+        Deployment_Node(sm, "Secrets store", "AWS Secrets Manager") {
+            ContainerDb(secrets, "Secrets", "Secret entry", "A protected value.")
+        }
+    }
+
+    Rel(api, secrets, "Queries", "Secrets Manager API")
+
+    UpdateRelStyle(api, secrets, $offsetX="20", $offsetY="-40")
+```

@@ -29,6 +29,7 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 ## Learn
 
 - [Getting started](./getting_started.md)
+- [Configuration guide](./configuration.md)
 
 ### Queries
 
@@ -41,7 +42,7 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 
 ### Configuration
 
-- [Overview](./configuration.md)
+- [Configuration guide](./configuration.md)
 - [Datastores](./datastores.md)
 - [Workloads](./workloads.md)
 - [Secrets management](./secret_management.md)

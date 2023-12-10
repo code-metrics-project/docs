@@ -7,6 +7,10 @@ You can run Code Metrics in a number of ways:
 - Kubernetes
 - Using Node.js directly
 
+Once you have chosen an approach, continue to the [configuration guide](./configuration.md). 
+
+---
+
 ## Docker Compose
 
 This method uses [Docker Compose](https://docs.docker.com/compose/install/).
@@ -58,6 +62,8 @@ Download the `codemetrics-api.zip` file and unzip it.
 To start the API, run:
 
     node index.js
+
+> The API runs at http://localhost:3000
 
 The frontend web UI is a static site, so can be hosted anywhere. You can find the latest version of the web UI on the [Releases page](https://github.com/DeloitteDigitalUK/code-metrics/releases).
 

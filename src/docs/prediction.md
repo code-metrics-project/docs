@@ -1,6 +1,9 @@
-# EXPERIMENTAL FEATURE: Prediction using machine learning
+# Prediction using machine learning
 
 Generates predictions based on one or two input datasets.
+
+> **Warning**
+> Prediction is an experimental feature.
 
 ## Enabling the feature
 

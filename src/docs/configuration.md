@@ -44,7 +44,9 @@ The path to the directory containing configuration files is set by the environme
 
 For example:
 
-    CONFIG_DIR=/path/to/config/files
+```
+CONFIG_DIR=/path/to/config/files
+```
 
 ### File format
 
@@ -74,4 +76,6 @@ If you need to adjust the origin of the web UI, edit the `CORS_ORIGIN` environme
 
 For example:
 
-   CORS_ORIGIN=http://localhost:3001
+```
+CORS_ORIGIN=http://localhost:3001
+```
