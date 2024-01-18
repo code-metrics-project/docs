@@ -38,6 +38,7 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 - [Repository churn](./query_repo_churn.md)
 - [Bug culprit files](./query_bug_culprits.md)
 - [Bugs and escaped bugs](./query_bugs.md)
+- [Vulnerabilities](./query_vulnerabilities.md)
 - [Custom queries](./custom_queries.md)
 
 ### Configuration
