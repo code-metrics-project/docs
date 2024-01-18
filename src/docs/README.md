@@ -52,6 +52,8 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 ## Other
 
 - [Architecture](./architecture.md)
+- [Vulnerability report upload](./vulnerability_report_upload.md)
+- [Prediction](./prediction.md)
 
 ## Design and build
 

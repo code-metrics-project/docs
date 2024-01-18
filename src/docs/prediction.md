@@ -22,19 +22,19 @@ Set the following environment variable in the backend:
 
 Here the inputs are lines of code (ncloc) and complexity.
 
-<img width="1479" alt="Line graph showing two correlated variables - ncloc and complexity - growing over time" src="img/predict1.png">
+![Line graph showing two correlated variables - ncloc and complexity - growing over time](img/predict1.png){: style="width:1479px"}
 
 ### Label dataset
 
 The label dataset used to train the model is 'number of open bugs'.
 
-<img width="1473" alt="Line graph showing upward tred of open bugs" src="img/predict2.png">
+![Line graph showing upward tred of open bugs](img/predict2.png){: style="width:1473px"}
 
 ### Set up
 
 Here is the UI with the inputs and labels set up.
 
-<img width="1491" alt="Screenshot of the prediction component showing complexity and ncloc as inputs and open bugs as label" src="img/predict3.png">
+![Screenshot of the prediction component showing complexity and ncloc as inputs and open bugs as label](img/predict3.png){: style="width:1491px"}
 
 ### Training
 
@@ -59,4 +59,4 @@ Here's the predicted value (blue) overlaid on the actual values (red).
 
 ℹ️ In this case, the fit is pretty good, ⚠️ but this will not always be the case.
 
-<img width="1489" alt="Line graph showing the predicted open bugs compared with open bugs" src="img/predict4.png">
+![Line graph showing the predicted open bugs compared with open bugs](img/predict4.png){: style="width:1489px"}

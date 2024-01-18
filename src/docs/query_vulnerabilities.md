@@ -17,4 +17,4 @@ Data can be uploaded using the Code Metrics API, or [the report uploader](./vuln
 
 The query is found on the `Security` page, which hosts a doughnut chart version of the vulnerabilities query data:
 
-<img width="1495" alt="Three doughnut charts showing vulnerabilities for repo groups, split by severity" src="img/vulnerabilities.png">
+![Three doughnut charts showing vulnerabilities for repo groups, split by severity](img/vulnerabilities.png){: style="width:1495px"}

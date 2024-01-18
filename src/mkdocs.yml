@@ -11,6 +11,9 @@ plugins:
   - search
   - mermaid2
 
+markdown_extensions:
+  - attr_list
+
 nav:
   - Introduction: 'README.md'
   - Getting started: 'getting_started.md'
@@ -23,6 +26,7 @@ nav:
     - Pipelines: 'query_pipelines.md'
     - Repository churn: 'query_repo_churn.md'
     - Source code metrics: 'query_source_code.md'
+    - Vulnerabilities: 'query_vulnerabilities.md'
     - Custom queries: 'custom_queries.md'
 
   - Configuration:
@@ -36,4 +40,5 @@ nav:
 
   - Other:
     - Prediction: 'prediction.md'
+    - Vulnerability report upload: 'vulnerability_report_upload.md'
     - Release process: 'release.md'
