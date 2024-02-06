@@ -30,6 +30,7 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 
 - [Getting started](./getting_started.md)
 - [Configuration guide](./configuration.md)
+- [Workloads](./workloads.md)
 
 ### Queries
 

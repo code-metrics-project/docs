@@ -30,7 +30,7 @@ Start by copying the file `workload-config.yaml.example` and name it `workload-c
 
 This file contains the structure and hooks used to organise and map the data produced within the remote systems to each team. The information gathered can be aggregated and filtered based on the options provided.
 
-➡️ [Learn about configuring workloads](./workloads.md)
+➡️ [Learn about configuring workloads](./config_workloads.md)
 
 ---
 
