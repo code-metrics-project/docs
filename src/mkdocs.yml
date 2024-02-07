@@ -32,7 +32,6 @@ nav:
 
   - Configuration:
     - Overview: 'configuration.md'
-    - Workloads: 'workloads.md'
     - Datastores: 'datastores.md'
     - Secrets management: 'secret_management.md'
     - Authentication: 'authentication.md'
