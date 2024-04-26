@@ -26,13 +26,13 @@ workloads:
     projectName: athena
     repoGroups:
       backend:
-        repoNames:
-          - example-api
-          - another-api
+        components:
+          - repo: example-api
+          - repo: another-api
       frontend:
-        repoNames:
-          - customer-web
-          - admin-web
+        components:
+          - repo: customer-web
+          - repo: admin-web
   codeAnalysis:
     type: sonar
     serverId: example-sonar
@@ -59,12 +59,12 @@ workloads:
     repoGroups:
       # match all repositories that end in '-api' using a regular expression
       backend:
-        repoNames:
-          - /.*-api/
+        components:
+          - repo: "/.*-api/"
       # match all repositories that end in '-web' using a regular expression
       frontend:
-        repoNames:
-          - /.*-web/
+        components:
+          - repo: "/.*-web/"
   codeAnalysis:
     type: sonar
     serverId: example-sonar
@@ -118,15 +118,15 @@ workloads:
     projectName: hera
     repoGroups:
       account-app:
-        repoNames:
-          - accounts-web
-          - accounts-api
-          - accounts-infra
+        components:
+          - repo: accounts-web
+          - repo: accounts-api
+          - repo: accounts-infra
       sales-app:
-        repoNames:
-          - sales-portal
-          - sales-api
-          - sales-platform
+        components:
+          - repo: sales-portal
+          - repo: sales-api
+          - repo: sales-platform
   codeAnalysis:
     type: sonar
     serverId: example-sonar

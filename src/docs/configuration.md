@@ -2,8 +2,8 @@
 
 There are two primary files to configure Code Metrics.
 
-- **remote-config.yaml** - controls how you connect to your external systems
-- **workload-config.yaml** - how you represent your teams/repositories
+-   **remote-config.yaml** - controls how you connect to your external systems
+-   **workload-config.yaml** - how you represent your teams/repositories
 
 These files model how your teams are organised, and contain settings to interact securely with external data sources for Code Quality (e.g. Sonar), Project Management (e.g. Jira) and Code Management (e.g. GitHub).
 
@@ -15,9 +15,10 @@ Start by copying the file `remote-config.yaml.example` and name it `remote-confi
 
 This file has a section for each type of external system:
 
-- **Code Management** - See how to [configure code management](./config_code_management.md) settings.
-- **Code Quality** - See how to [configure code quality](./config_code_quality.md) settings.
-- **Project Management** - See how to [configure project management](./config_project_management.md) settings.
+-   **Code Management** - See how to [configure code management](./config_code_management.md) settings.
+-   **Pipelines** - See how to [configure pipelines](./config_pipelines.md) settings.
+-   **Code Quality** - See how to [configure code quality](./config_code_quality.md) settings.
+-   **Project Management** - See how to [configure project management](./config_project_management.md) settings.
 
 > **Note**
 > Supported external systems are described in [the features section](./features.md).

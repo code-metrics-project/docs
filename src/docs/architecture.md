@@ -2,9 +2,9 @@
 
 ## High level architecture
 
-The tool integrates metrics from your ALM tooling (e.g. Jira), version control system, and code quality tooling (SonarQube).
+The tool integrates metrics from your application lifecycle management (ALM) tooling (e.g. Jira), code quality tooling (SonarQube) and version control system (VCS) for application code (e.g. GitHub).
 
-![High level architecture](./architecture.png)
+![High level architecture](./img/architecture.png)
 
 ## System context
 
@@ -103,7 +103,7 @@ An example deployment using AWS Lambda (backend), CloudFront/S3 (frontend) and D
 
 The key application technologies are Node.js/Express for the API server and Vue.js for the UI. TypeScript is the primary language. Some of the analyses use a backing store (MongoDB or DynamoDB are a common choices).
 
-The tool interacts with ALM tooling (Jira), Code quality tools (Sonar) and source control platforms (ADO/Bitbucket/GitHub) typically using their respective HTTPS API. These sources provide the raw data for display or subsequent combined analysis.
+The tool interacts with ALM tooling (ADO/Jira), Code quality tools (Sonar) and source control platforms (ADO/Bitbucket/GitHub) typically using their respective HTTPS API. These sources provide the raw data for display or subsequent combined analysis.
 
 Packaging is available via:
 
