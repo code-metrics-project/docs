@@ -2,13 +2,13 @@
 
 To use Code Metrics users require authentication. You configure how users authenticate using one of the supported authentication providers:
 
-| Name    | Details                                                                                                                                         |
-|---------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| file    | User configuration is represented as password hashes and usernames in a file named `users.json`.                                                |
+| Name         | Details                                                                                                                                         |
+|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| file         | User configuration is represented as password hashes and usernames in a file named `users.json`.                                                |
 | azureEntraId | Authenticate against Azure Entra ID using RPOC                                                                                                  |
-| cognito | AWS Cognito user store. This authenticator implementation holds items in an external Cognito instance. It requires appropriate AWS credentials. |
-| ldap    | User is verified against LDAP/AD                                                                                                                |
-
+| cognito      | AWS Cognito user store. This authenticator implementation holds items in an external Cognito instance. It requires appropriate AWS credentials. |
+| ldap         | User is verified against LDAP/AD                                                                                                                |
+| KeyCloak     | Direct Grant Keycloak Authetication                                                                                                             |
 
 ## Setting the authenticator implementation
 
@@ -185,3 +185,22 @@ To use method 2 (user bind)
 ```
 LDAP_ADMIN_AUTH=false
 ```
+
+### [KeyCloak](https://www.keycloak.org/)
+
+Set the environment variable:
+
+```
+AUTHENTICATOR_IMPL=keycloak
+```
+
+This authenticator queries the specified Keycloak instance to authenticate the user.
+
+Set the following Env Vars:
+```
+KEYCLOAK_URI='http://127.0.0.1:8086';
+KEYCLOAK_REALM='CodeMetrics';
+KEYCLOAK_CLIENT_ID='codemetrics';
+```
+
+Keycloak Realm/Client should be configured to have `Direct access grants` enabled for this to work.
