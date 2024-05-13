@@ -5,7 +5,10 @@ To use Code Metrics users require authentication. You configure how users authen
 | Name    | Details                                                                                                                                         |
 |---------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | file    | User configuration is represented as password hashes and usernames in a file named `users.json`.                                                |
+| azureEntraId | Authenticate against Azure Entra ID using RPOC                                                                                                  |
 | cognito | AWS Cognito user store. This authenticator implementation holds items in an external Cognito instance. It requires appropriate AWS credentials. |
+| ldap    | User is verified against LDAP/AD                                                                                                                |
+
 
 ## Setting the authenticator implementation
 
@@ -147,3 +150,38 @@ AEID_SCOPES='https://graph.microsoft.com/.default'
  * Enter the App in Azure, then Click Api Permissions on the left, then `Grant admin consent for default directory`
 
 Username is the user's principal name in Entra ID (Which may or may not be their email address)
+
+
+### LDAP authenticator
+Set the environment variable:
+
+```
+AUTHENTICATOR_IMPL=ldap
+```
+
+There are two supported methods of LDAP authentication:
+1. Bind with Admin Account, search for user and if found attempt to bind as user
+2. Attempt to bind with specified user account
+
+Then configure the following Env Vars as needed
+
+Set the following Env Vars for BOTH Methods:
+```
+LDAP_URI='ldap://localhost:1389'
+LDAP_USER_SEARCH_BASE='ou=users,dc=example,dc=org'
+LDAP_ROOT_DN='dc=example,dc=org'
+LDAP_USERNAME_ATTRIBUTE='uid'
+LDAP_TLS=false
+```
+
+To use method 1 (admin bind)
+```
+LDAP_ADMIN_AUTH=true
+LDAP_BIND_DN='cn=admin,dc=example,dc=org'
+LDAP_BIND_PASSWORD='admin'
+```
+
+To use method 2 (user bind)
+```
+LDAP_ADMIN_AUTH=false
+```

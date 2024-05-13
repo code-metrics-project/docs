@@ -1,9 +1,10 @@
 # Configuration
 
-There are two primary files to configure Code Metrics.
+There are three primary files to configure Code Metrics.
 
 -   **remote-config.yaml** - controls how you connect to your external systems
 -   **workload-config.yaml** - how you represent your teams/repositories
+-   **license.yaml** - the license key to run the software
 
 These files model how your teams are organised, and contain settings to interact securely with external data sources for Code Quality (e.g. Sonar), Project Management (e.g. Jira) and Code Management (e.g. GitHub).
 
@@ -32,6 +33,21 @@ Start by copying the file `workload-config.yaml.example` and name it `workload-c
 This file contains the structure and hooks used to organise and map the data produced within the remote systems to each team. The information gathered can be aggregated and filtered based on the options provided.
 
 ➡️ [Learn about configuring workloads](./config_workloads.md)
+
+### License file (license.yaml or license.json)
+
+This file contains the license key and the associated email address.
+
+For example:
+
+```yaml
+# license.yaml
+---
+email: test@example.com
+key: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...
+```
+
+Place the license file in the configuration directory. The license is validated when the application starts.
 
 ---
 
