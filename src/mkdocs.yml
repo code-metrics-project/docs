@@ -41,4 +41,3 @@ nav:
   - Other:
     - Prediction: 'prediction.md'
     - Vulnerability report upload: 'vulnerability_report_upload.md'
-    - Release process: 'release.md'

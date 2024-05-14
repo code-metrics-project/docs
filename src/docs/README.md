@@ -55,11 +55,15 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 - [Vulnerability report upload](./vulnerability_report_upload.md)
 - [Prediction](./prediction.md)
 
-## Design and build
-
-- [Release process](./release.md)
-- [Mocks](../backend/mocks/README.md)
-
 ## Feature support
 
 See a list of [supported features](./features.md) for third party tools.
+
+---
+
+## Design and build
+
+This documentation is intended for consumption by Code Metrics project maintainers.
+
+- [Release process](./release.md)
+- [Mocks](../backend/mocks/README.md)
