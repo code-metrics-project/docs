@@ -42,6 +42,54 @@ workloads:
     project: ATH
 ```
 
+A monorepo example with multiple components, each with its own Sonar mapping.
+```yaml
+workloads:
+-   id: CodeMetricsMonoRepo
+    name: "Code Metrics"
+    codeManagement:
+      type: github
+      serverId: CodeMetrics
+      projectName: code-metrics-user-org
+      repoGroups:
+        CodeMetricsCore:
+          components:
+            - repo: /code-metrics/
+              name: backend
+              paths: [ "/backend" ]
+            - repo: /code-metrics/
+              name: ui
+              paths: [ "/ui" ]
+        CodeMetricsML:
+          components:
+            - repo: /code-metrics/
+              name: machinelearning
+              paths: [ "/machinelearning" ]
+    codeAnalysis:
+      type: sonar
+      serverId: example-sonar
+    pipelines:
+      type: github
+      serverId: CodeMetrics
+      projectName: code-metrics-user-org
+      jobGroups:
+        CodeMetrics:
+          jobNames:
+            - code-metrics
+    projectManagement:
+      type: jira
+      serverId: mock-jira
+      teamFilterJql: '"Team name[Dropdown]" in ("Gaia")'
+      project: DEV
+      prodFilterJql: '"Project Environment[Dropdown]" = PROD'
+
+repoMappings:
+  - sonarProjectKey: ml
+    componentName: machinelearning
+  - sonarProjectKey: code-metrics-ui
+    componentName: ui
+```
+
 > **Note**
 > Repository group names, such as `backend` are arbitrary. You can name these groups whatever you like.
 
@@ -145,7 +193,7 @@ It is possible to specify a different key for a given repository using the `repo
 ```yaml
 repoMappings:
   - sonarProjectKey: petclinic
-    vcsRepoName: spring-petclinic
+    componentName: spring-petclinic
 ```
 
 In this example, the Code Metrics would use the Sonar component key `petclinic` for the repository named `spring-petclinic`. 
