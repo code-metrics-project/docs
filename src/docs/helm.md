@@ -5,6 +5,7 @@ Code Metrics can be deployed on Kubernetes. To ease deployment, the project prod
 ## Structure
 
 There are 4 charts:
+
 1. code-metrics-api
 2. code-metrics-ui
 3. code-metrics
