@@ -8,7 +8,7 @@ To use Code Metrics users require authentication. You configure how users authen
 | azureEntraId | Authenticate against Azure Entra ID using RPOC                                                                                                  |
 | cognito      | AWS Cognito user store. This authenticator implementation holds items in an external Cognito instance. It requires appropriate AWS credentials. |
 | ldap         | User is verified against LDAP/AD                                                                                                                |
-| KeyCloak     | Direct Grant Keycloak Authetication                                                                                                             |
+| keycloak     | Direct Grant Keycloak Authetication                                                                                                             |
 
 ## Setting the authenticator implementation
 
@@ -20,11 +20,11 @@ Set the authenticator implementation to use with the `AUTHENTICATOR_IMPL` enviro
 > AUTHENTICATOR_IMPL=file
 > ```
 
-## Configuring the `ACCESS_TOKEN_SECRET`
+## Configuring the access token secret
 
 Once a user has authenticated with one of the providers, Code Metrics issues them a time-limited token. This token is used by the user's browser when calling the Code Metrics backend APIs.
 
-The token is generated based on an secret - the `ACCESS_TOKEN_SECRET`. This value is sensitive and should be protected, as it is used by the backend to determine whether to trust a token presented by the user's browser.
+The token is generated based on a secret - the `ACCESS_TOKEN_SECRET`. This value is sensitive and should be protected, as it is used by the backend to determine whether to trust a token presented by the user's browser.
 
 You can set the `ACCESS_TOKEN_SECRET` environment variable to any string.
 
@@ -150,9 +150,9 @@ Set the environment variable:
 AUTHENTICATOR_IMPL=azureEntraId
 ```
 
-Then configure the following Env Vars as needed
+Then configure the following environment variables as needed
 
-Set the following Env Vars:
+Set the following environment variables:
 ```
 AEID_TENANTID='111-1111-1111-1111'
 AEID_CLIENTID='2222-2222-222-2222'
@@ -180,9 +180,9 @@ There are two supported methods of LDAP authentication:
 1. Bind with Admin Account, search for user and if found attempt to bind as user
 2. Attempt to bind with specified user account
 
-Then configure the following Env Vars as needed
+Then configure the following environment variables as needed
 
-Set the following Env Vars for BOTH Methods:
+Set the following environment variables for BOTH Methods:
 ```
 LDAP_URI='ldap://localhost:1389'
 LDAP_USER_SEARCH_BASE='ou=users,dc=example,dc=org'
@@ -213,7 +213,7 @@ AUTHENTICATOR_IMPL=keycloak
 
 This authenticator queries the specified Keycloak instance to authenticate the user.
 
-Set the following Env Vars:
+Set the following environment variables:
 ```
 KEYCLOAK_URI='http://127.0.0.1:8086';
 KEYCLOAK_REALM='CodeMetrics';
