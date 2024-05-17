@@ -20,6 +20,23 @@ Set the authenticator implementation to use with the `AUTHENTICATOR_IMPL` enviro
 > AUTHENTICATOR_IMPL=file
 > ```
 
+## Configuring the `ACCESS_TOKEN_SECRET`
+
+Once a user has authenticated with one of the providers, Code Metrics issues them a time-limited token. This token is used by the user's browser when calling the Code Metrics backend APIs.
+
+The token is generated based on an secret - the `ACCESS_TOKEN_SECRET`. This value is sensitive and should be protected, as it is used by the backend to determine whether to trust a token presented by the user's browser.
+
+You can set the `ACCESS_TOKEN_SECRET` environment variable to any string.
+
+> **Important**
+> You must ensure that all instances of the backend (e.g. all container instances, or all Lambda instances) share the same value for the `ACCESS_TOKEN_SECRET`, so that they can validate the token issued to the user.
+
+---
+
+## Authentication providers
+
+This section lists the supported authentication providers.
+
 ### File-based authenticator (default)
 
 Set the environment variable:
