@@ -156,7 +156,7 @@ Set the following environment variables:
 ```
 AEID_TENANTID='111-1111-1111-1111'
 AEID_CLIENTID='2222-2222-222-2222'
-AEID_SCOPES='https://graph.microsoft.com/.default'
+AEID_SCOPE='https://graph.microsoft.com/.default'
 ```
 
 #### Azure Application Setup
