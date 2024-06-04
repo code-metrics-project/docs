@@ -27,7 +27,7 @@ jobs:
 
       - name: Upload site
         if: ${{ github.ref_name == 'main' }}
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
