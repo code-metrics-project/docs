@@ -33,4 +33,4 @@ jobs:
 
       - name: Deploy site
         if: ${{ github.ref_name == 'main' }}
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v4
