@@ -2,14 +2,71 @@
 
 This section is part of the `remote-config.yaml` configuration file. See the [configuration overview](./configuration.md) for further information.
 
-## Sonar
+## SonarQube and SonarCloud
 
-For Sonar, use the SonarQube server URL and token with api permissions generated from the instance.
+Code Metrics supports both SonarQube and SonarCloud as code quality providers. The configuration is similar for both.
 
-1. Using a user with appropriate instance permissions, create an access token within Administration > Users. It is recommended a service user is created for this integration. [Further instructions](https://docs.sonarqube.org/latest/user-guide/user-token/).
+### SonarCloud
 
-2. Paste the result in your respective `remote-config.yaml` file configuration within a `codeAnalysis.sonar` server object's `apiKey` field.
+For SonarCloud, set the `url` to `https://sonarcloud.io` and use a SonarCloud token generated from the `Account > Security` page.
+
+### SonarQube
+
+For SonarQube, set the `url` to the server URL, and use a token with appropriate API permissions generated from the instance, as follows:
+
+- Navigate to `Administration > Users`
+- Create an access token to enable read only access
+
+> It is recommended a service user is created for this integration.
+> See [further instructions](https://docs.sonarqube.org/latest/user-guide/user-token/).
+
+### Configuration file
+
+Configure the `codeAnalysis.sonar` server object in the `remote-config.yaml` file.
+
+> **Note**
+> You should strongly prefer using the [secrets management](./secret_management.md) mechanism to store the token,
+> rather than storing it directly within the configuration file.
+
+```yaml
+# remote-config.yaml
+---
+codeAnalysis:
+  sonar:
+    servers:
+      - id: example-sonar
+        url: https://example-sonar-server
+        apiKey: "${secret.SONAR_API_KEY}"
+```
 
 ### Component name prefix
 
-In some environments, it may be required to prepend a string to component names when querying Sonar. For example, if your repository names are 'frontend' and 'backend' but your Sonar components are named 'projname_frontend' and 'projname_backend', you can set a `componentKeyPrefix` key in the `remote-config.yaml` for a given Sonar server.
+In some environments, it may be required to prepend a string to component names when querying Sonar.
+
+For example, if your repository names are 'frontend' and 'backend' but your Sonar components are named 'projname_frontend' and 'projname_backend'.
+
+You can set a `componentKeyPrefix` key in the `remote-config.yaml` for a given Sonar server. The prefix is prepended to all component keys when querying Sonar.
+
+## No code quality provider
+
+In the case where no code quality provider is used, the `codeAnalysis` type should be set to `none`.
+
+```yaml
+# remote-config.yaml
+---
+codeAnalysis:
+  none:
+    - id: none
+```
+
+In the associated [workflow configuration](./config_workflow.md), the `codeAnalysis` type should be set to `none`.
+
+```yaml
+# workload-config.yaml
+---
+workloads:
+  - id: athena
+    codeAnalysis:
+      type: none
+      serverId: none
+```
