@@ -26,7 +26,7 @@ A query item looks like this:
 
 - **name**: short user-friendly name
 - **description**: longer user friendly text
-- **component**: the type of component (supported: `dynamic-input`, `sonar-metric-summary`, `file-metric-breakdown`)
+- **component**: the type of component (supported: `dynamic-input`, `code-analysis-metric-summary`, `file-metric-breakdown`)
 - **props**: the properties for the component
 
 > Note that `props` is dynamic - so, arbitrary properties can be passed through from the config as long as they are supported by the component.
