@@ -2,11 +2,11 @@
 
 Custom queries are combinations of query types and default inputs that you can use to tailor the tool to a particular analysis, workload or repository. You can define custom queries using a JSON file.
 
-## Queries file
+## Queries files
 
-Queries are held in a file named `queries.json`.
+Queries are held in files named `queries-<collection name>.json`.
 
-To customise the queries copy the file `queries.json.example` and name it `queries.json`.
+To customise the queries copy the file `queries-example.json` and name it `queries-<collection name>.json`.
 
 > The path to the directory containing this file is set by the environment variable `CONFIG_DIR`. It defaults to the directory containing the `backend` component, such as `/backend` in the Docker container.
 
