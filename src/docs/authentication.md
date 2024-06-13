@@ -63,7 +63,7 @@ Copy the example file `users.json.example` to get started.
 
 #### The `userconfig` tool
 
-You can generate entries for the `users.json` using the `userconfig` tool under `backend/tools`.
+You can generate entries for the `users.json` using the `userconfig` tool under `tools`.
 
 <details>
 <summary>Usage instructions for `userconfig` tool</summary>
