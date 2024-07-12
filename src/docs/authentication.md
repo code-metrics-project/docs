@@ -7,8 +7,9 @@ To use Code Metrics users require authentication. You configure how users authen
 | file         | User configuration is represented as password hashes and usernames in a file named `users.json`.                                                |
 | azureEntraId | Authenticate against Azure Entra ID using RPOC                                                                                                  |
 | cognito      | AWS Cognito user store. This authenticator implementation holds items in an external Cognito instance. It requires appropriate AWS credentials. |
+| keycloak     | Direct Grant Keycloak Authentication                                                                                                            |
 | ldap         | User is verified against LDAP/AD                                                                                                                |
-| keycloak     | Direct Grant Keycloak Authetication                                                                                                             |
+| oidc         | OpenID Connect (OIDC) Authentication                                                                                                            |
 
 ## Setting the authenticator implementation
 
@@ -95,7 +96,9 @@ Once you type the password, the configuration is generated as follows:
 ```
 </details>
 
-### AWS Cognito authenticator
+### AWS Cognito (via AWS API)
+
+CodeMetrics supports AWS Cognito for user authentication. This is a back-end authentication mechanism, where the CodeMetrics backend queries AWS Cognito to authenticate the user.
 
 Set the environment variable:
 
@@ -140,9 +143,57 @@ COGNITO_USER_POOL_ID=ExampleCognitoUserPoolId
     UpdateRelStyle(api, users, $offsetX="20", $offsetY="-40")
 ```
 
-### Azure Entra ID (Formerly AzureAD)
+### OpenID Connect (OIDC)
 
-Currently only:  OAuth 2.0 Resource Owner Password Credentials (ROPC) is supported.
+CodeMetrics supports [OpenID Connect (OIDC)](https://openid.net/developers/how-connect-works/) for user authentication. This is a front-end authentication flow, where the user is redirected to an OIDC provider to authenticate.
+
+The following example is for Keycloak, but any OIDC provider can be used.
+
+Set the following environment variable to use the OIDC authenticator:
+
+```
+AUTHENTICATOR_IMPL=oidc
+```
+
+Ensure the UI base URL is set to the address a user will see for the frontend application:
+
+```
+UI_BASE_URL=http://localhost:3001
+```
+
+The following environment variables must match the configuration of your OIDC provider:
+
+```
+OIDC_ISSUER_BASE_URL=http://localhost:8086/realms/codemetrics
+OIDC_CLIENT_ID=codemetrics
+OIDC_CLIENT_SECRET=changeme
+OIDC_SECRET=changeme
+```
+
+<details>
+<summary>Additional OIDC configuration</summary>
+
+Additional OIDC configuration can be set:
+
+```
+OIDC_USER_CLAIM=sub
+OIDC_SCOPES=openid profile email
+OIDC_AUDIENCE=codemetrics
+```
+</details>
+
+> **Note**
+> If you are using Keycloak, ensure the [Keycloak Realm/Client](https://www.keycloak.org/docs/latest/server_admin/#assembly-managing-clients_server_administration_guide) has OIDC enabled.
+
+> **Note**
+> See the [oidc example](../examples/keycloak) for a working example of OIDC authentication with CodeMetrics and Keycloak.
+
+### Azure Entra ID (formerly AzureAD)
+
+CodeMetrics supports Azure Entra ID (formerly AzureAD) for user authentication. This is a back-end authentication mechanism, where the CodeMetrics backend queries Azure Entra ID to authenticate the user.
+
+> **Note**
+> Currently, only 'OAuth 2.0 Resource Owner Password Credentials' (ROPC) is supported.
 
 Set the environment variable:
 
@@ -160,6 +211,7 @@ AEID_SCOPE='https://graph.microsoft.com/.default'
 ```
 
 #### Azure Application Setup
+
  * Create users in [Azure Entra ID](https://portal.azure.com/?quickstart=true#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview)
  * [Register your App](https://portal.azure.com/?quickstart=true#view/Microsoft_AAD_RegisteredApps/CreateApplicationBlade/isMSAApp~/false)
  * Enter the App in Azure, then Click authentication on the left -> Supported account types -> Select: 	`Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)`
@@ -168,8 +220,10 @@ AEID_SCOPE='https://graph.microsoft.com/.default'
 
 Username is the user's principal name in Entra ID (Which may or may not be their email address)
 
+### LDAP
 
-### LDAP authenticator
+CodeMetrics supports using an LDAP registry for user authentication. This is a back-end authentication mechanism, where the CodeMetrics backend queries an LDAP store to authenticate the user.
+
 Set the environment variable:
 
 ```
@@ -203,7 +257,9 @@ To use method 2 (user bind)
 LDAP_ADMIN_AUTH=false
 ```
 
-### [KeyCloak](https://www.keycloak.org/)
+### Keycloak (via Direct Grant)
+
+If you are using [Keycloak](https://www.keycloak.org/) as your identity provider, you can use the Direct Grant flow to authenticate users. This is a backend API call from the CodeMetrics API server to the Keycloak server.
 
 Set the environment variable:
 
@@ -216,7 +272,7 @@ This authenticator queries the specified Keycloak instance to authenticate the u
 Set the following environment variables:
 ```
 KEYCLOAK_URI='http://127.0.0.1:8086';
-KEYCLOAK_REALM='CodeMetrics';
+KEYCLOAK_REALM='codemetrics';
 KEYCLOAK_CLIENT_ID='codemetrics';
 ```
 
