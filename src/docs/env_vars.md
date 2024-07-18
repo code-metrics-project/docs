@@ -13,6 +13,7 @@ Some application features are configured using environment variables.
 | ACCESS_TOKEN_SECRET        | Access token secret - see [Authentication](./authentication.md)                                   |                   | `changeme`                                        |
 | AUTHENTICATOR_IMPL         | Authentication implementation - see [Authentication](./authentication.md)                         | `file`            | `cognito`                                         |
 | AWS_REGION                 | AWS region containing DynamoDB or Secrets Manager                                                 |                   | `eu-west-1`                                       |
+| CACHE_PIPELINE_BUILDS      | Whether to cache the pipeline builds from the pipelines provider                                  | `true`            |                                                   |
 | CACHE_REPO_LIST            | Whether to cache the repository list from the VCS provider                                        | `true`            |                                                   |
 | COGNITO_USER_POOL_ID       | Cognito authenticator settings                                                                    |                   |                                                   |
 | COGNITO_CLIENT_ID          | Cognito authenticator settings                                                                    |                   |                                                   |
@@ -40,6 +41,7 @@ Some application features are configured using environment variables.
 | LOG_LEVEL                  | Logging level. Set to 0 (OFF), 1 (DEBUG) or 2 (VERBOSE)                                           | `1`               | `2`                                               |
 | LOG_RESPONSE_BODY          | Whether to log response bodies from external API calls                                            | `false`           | `true`                                            |
 | LOOKUP_CACHE_ENABLED       | Whether the cache is enabled (requires datastore)                                                 | `false`           | `true`                                            |
+| PRECACHE_REPO_LIST         | Whether to pre-cache the repository list from the VCS provider                                    | `true`            | `false`                                           |
 | PORT                       | The port the backend listens on                                                                   | `3001`            | `3030`                                            |
 | REPO_LIST_EXPIRY_SECONDS   | If `CACHE_REPO_LIST` is enabled - for how long the list is cached                                 | `21600`           | `10800`                                           |
 | SECRET_RESOLVER_IMPL       | Secret resolver implementation - see [Secret management](./secret_management.md)                  | `file`            | `file`                                            |
