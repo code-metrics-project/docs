@@ -2,14 +2,41 @@
 
 This table shows feature support for third party tools.
 
-| Tool                                                                        | [Source Code Management](./config_code_management.md) (SCM)             | [CI/CD Pipelines](./config_pipelines.md)                                | [Code Analysis](./config_code_quality.md) | [Application Lifecycle Management](./config_project_management.md) (ALM)                 |
-| --------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [Azure DevOps](https://azure.microsoft.com/en-gb/products/devops/repos)     | ✅ Supported                                                            | ✅ Supported                                                            | -                                         | ✅                                                                                       |
-| [Bitbucket (Cloud)](https://bitbucket.org/product)                          | 🟡 [Beta](https://github.com/DeloitteDigitalUK/code-metrics/issues/291) | ❌ Not yet supported                                                    | -                                         | -                                                                                        |
-| [Bitbucket Server](https://www.atlassian.com/software/bitbucket/enterprise) | [#366](https://github.com/DeloitteDigitalUK/code-metrics/pull/366)      | ❌ Not yet supported                                                    | -                                         | -                                                                                        |
-| [GitHub](https://github.com/)                                               | ✅ Supported                                                            | ✅ Supported                                                            | -                                         | 🟡 [#166](https://github.com/DeloitteDigitalUK/code-metrics/issues/166) - In Development |
-| [Gitlab](https://about.gitlab.com/)                                         | [#325](https://github.com/DeloitteDigitalUK/code-metrics/issues/325)    | ❌ Not yet supported                                                    | -                                         | -                                                                                        |
-| [Jenkins](https://www.jenkins.io)                                           | -                                                                       | 🟡 [Beta](https://github.com/DeloitteDigitalUK/code-metrics/issues/229) | -                                         | -                                                                                        |
-| [Jira](https://www.atlassian.com/software/jira)                             | -                                                                       | -                                                                       | -                                         | ✅ Supported                                                                             |
-| [SonarCloud](https://www.sonarsource.com/products/sonarcloud/)              | -                                                                       | -                                                                       | ✅ Supported                              | -                                                                                        |
-| [SonarQube](https://www.sonarsource.com/products/sonarqube/)                | -                                                                       | -                                                                       | ✅ Supported                              | -                                                                                        |
+## [Source Code Management](./config_code_management.md) (SCM)
+
+| Tool                                                                        | Support                                                                     |
+|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| [Azure DevOps](https://azure.microsoft.com/en-gb/products/devops/repos)     | ✅ Supported                                                                 |
+| [Bitbucket (Cloud)](https://bitbucket.org/product)                          | 🟡 [Beta](https://github.com/DeloitteDigitalUK/code-metrics/issues/291)     |
+| [Bitbucket Server](https://www.atlassian.com/software/bitbucket/enterprise) | ✅ Supported                                                                 |
+| [GitHub](https://github.com/)                                               | ✅ Supported                                                                 |
+| [Gitlab](https://about.gitlab.com/)                                         | 🗓️ [Planned](https://github.com/DeloitteDigitalUK/code-metrics/issues/325) |
+
+## [CI/CD Pipelines](./config_pipelines.md)
+
+| Tool                                                                        | Support                                                                 |
+|-----------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| [Azure DevOps](https://azure.microsoft.com/en-gb/products/devops/repos)     | ✅ Supported                                                             |
+| [Bitbucket (Cloud)](https://bitbucket.org/product)                          | ❌ Not yet supported                                                     |
+| [Bitbucket Server](https://www.atlassian.com/software/bitbucket/enterprise) | ❌ Not yet supported                                                     |
+| [GitHub](https://github.com/)                                               | ✅ Supported                                                             |
+| [Gitlab](https://about.gitlab.com/)                                         | ❌ Not yet supported                                                     |
+| [Jenkins](https://www.jenkins.io)                                           | ✅ Supported                                                             |
+
+## [Code Analysis](./config_code_quality.md)
+
+| Tool                                                                        | Support     |
+|-----------------------------------------------------------------------------|-------------|
+| [SonarCloud](https://www.sonarsource.com/products/sonarcloud/)              | ✅ Supported |
+| [SonarQube](https://www.sonarsource.com/products/sonarqube/)                | ✅ Supported |
+
+## [Application Lifecycle Management](./config_project_management.md) (ALM)
+
+| Tool                                                                        | Support                                                                 |
+|-----------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| [Azure DevOps](https://azure.microsoft.com/en-gb/products/devops/repos)     | ✅                                                                       |
+| [Bitbucket (Cloud)](https://bitbucket.org/product)                          | ❌ Not yet supported                                                     |
+| [Bitbucket Server](https://www.atlassian.com/software/bitbucket/enterprise) | ❌ Not yet supported                                                     |
+| [GitHub](https://github.com/)                                               | 🟡 [Beta](https://github.com/DeloitteDigitalUK/code-metrics/issues/166) |
+| [Gitlab](https://about.gitlab.com/)                                         | ❌ Not yet supported                                                     |
+| [Jira](https://www.atlassian.com/software/jira)                             | ✅ Supported                                                             |
