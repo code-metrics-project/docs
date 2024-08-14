@@ -14,24 +14,35 @@ Set the authenticator implementation to use with the `AUTHENTICATOR_IMPL` enviro
 AUTHENTICATOR_IMPL=oidc
 ```
 
-Set the `UI_BASE_URL` environment variable to the base URL for the UI. This is used to compute the value of the `redirect_uri`, in the form: `<UI_BASE_URL>/oidc/callback`.
+Set the `UI_BASE_URL` environment variable to the base URL for the UI.
 
 ```
 UI_BASE_URL=https://example.com
 ```
 
+Optional: Set the `OIDC_REDIRECT_URI` environment variable to override the redirect URI.
+
+```
+OIDC_REDIRECT_URI=https://api.example.com/oidc/callback
+```
+
+> **Note**
+> If not set, the value of the `redirect_uri` is computed from the API base URL, in the form: `<API_BASE_URL>/oidc/callback`.
+
 ## Configuration
 
 The following environment variables are used to configure the OIDC authenticator:
 
-| Variable             | Purpose                                                                                                                                         | Default                                                                 | Example                                                                     |
-|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| OIDC_ISSUER_BASE_URL | The base URL for the OIDC server. This should be the base from which the discovery endpoint (`/.well-known/openid-configuration`) can be found. |                                                                         | `https://accounts.google.com`                                               |
-| OIDC_CLIENT_ID       | The client ID.                                                                                                                                  |                                                                         | `000000000000-a1b2c3d4e5f6g7h8i9j10k11l12m13n14.apps.googleusercontent.com` |
-| OIDC_CLIENT_SECRET   | The client secret.                                                                                                                              |                                                                         | `ABCDEF-ab12cd_aBcDeF12gH34-aB`                                             |
-| OIDC_USER_CLAIM      | The name of ID token claim containing the user email address.                                                                                   | `sub`                                                                   | `sub` or `email`                                                            |
-| OIDC_SCOPES          | The required scopes.                                                                                                                            | `openid email`                                                          | `openid email`                                                              |
-| OIDC_AUDIENCE        | Optional - the desired value of the audience claim.                                                                                             |                                                                         | `000000000000-a1b2c3d4e5f6g7h8i9j10k11l12m13n14.apps.googleusercontent.com` |
+| Variable             | Purpose                                                                                                                                         | Default                                        | Example                                                                     |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|-----------------------------------------------------------------------------|
+| OIDC_ISSUER_BASE_URL | The base URL for the OIDC server. This should be the base from which the discovery endpoint (`/.well-known/openid-configuration`) can be found. |                                                | `https://accounts.google.com`                                               |
+| OIDC_CLIENT_ID       | The client ID.                                                                                                                                  |                                                | `000000000000-a1b2c3d4e5f6g7h8i9j10k11l12m13n14.apps.googleusercontent.com` |
+| OIDC_CLIENT_SECRET   | The client secret.                                                                                                                              |                                                | `ABCDEF-ab12cd_aBcDeF12gH34-aB`                                             |
+| OIDC_USER_CLAIM      | The name of ID token claim containing the user email address.                                                                                   | `sub`                                          | `sub` or `email`                                                            |
+| OIDC_SCOPES          | The required scopes.                                                                                                                            | `openid email`                                 | `openid email`                                                              |
+| OIDC_AUDIENCE        | Optional - the desired value of the audience claim.                                                                                             |                                                | `000000000000-a1b2c3d4e5f6g7h8i9j10k11l12m13n14.apps.googleusercontent.com` |
+| OIDC_REDIRECT_URI    | Optional - override the redirect URI.                                                                                                           | Derived from the hostname of the auth request. | `https://example.com/oidc/callback`                                         |
+| OIDC_USE_PKCE        | Optional - whether to use PKCE.                                                                                                                 | `false`                                        | `true`                                                                      |
 
 ---
 
@@ -46,13 +57,14 @@ This section provides examples of how to configure Code Metrics to use specific 
 To configure Code Metrics to use Google as an OIDC provider:
 
 1. Create a new project in the [Google Cloud Console](https://console.cloud.google.com/).
-2. Enable the Google Identity Platform API.
-3. Create OAuth 2.0 credentials. Set the permitted redirect URI to `<UI_BASE_URL>/oidc/callback`.
-4. Set the `OIDC_ISSUER_BASE_URL` environment variable to `https://accounts.google.com`.
-5. Set the `OIDC_CLIENT_ID` and `OIDC_CLIENT_SECRET` environment variables to the client ID and client secret from the OAuth 2.0 credentials.
-6. Set the `OIDC_SCOPES` environment variable to `openid email`.
-7. Set the `OIDC_USER_CLAIM` environment variable to `email`.
-8. (Optional) Set the `OIDC_AUDIENCE` environment variable to your client ID.
+2. Create OAuth 2.0 credentials. Set the permitted redirect URI to `<API_BASE_URL>/oidc/callback`.
+3. Set the `OIDC_ISSUER_BASE_URL` environment variable to `https://accounts.google.com`.
+4. Set the `OIDC_CLIENT_ID` and `OIDC_CLIENT_SECRET` environment variables to the client ID and client secret from the OAuth 2.0 credentials.
+5. Set the `OIDC_SCOPES` environment variable to `openid email`.
+6. Set the `OIDC_USER_CLAIM` environment variable to `email`.
+7. (Optional) Set the `OIDC_AUDIENCE` environment variable to your client ID.
+8. (Optional) Set the `OIDC_USE_PKCE` environment variable to `true`.
+9. (Optional) Override the `OIDC_REDIRECT_URI` environment variable to `https://api.example.com/oidc/callback`.
 
 Example:
 
@@ -64,6 +76,8 @@ OIDC_CLIENT_SECRET=ABCDEF-ab12cd_aBcDeF12gH34-aB
 OIDC_USER_CLAIM=email
 OIDC_SCOPES=openid email
 OIDC_AUDIENCE=000000000000-a1b2c3d4e5f6g7h8i9j10k11l12m13n14.apps.googleusercontent.com
+OIDC_REDIRECT_URI=https://api.example.com/oidc/callback
+OIDC_USE_PKCE=true
 UI_BASE_URL=https://example.com
 ```
 
