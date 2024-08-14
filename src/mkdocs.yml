@@ -34,7 +34,16 @@ nav:
     - Overview: 'configuration.md'
     - Datastores: 'datastores.md'
     - Secrets management: 'secret_management.md'
-    - Authentication: 'authentication.md'
+
+    - Authentication:
+      - Overview: 'authentication.md'
+      - Azure Authentication: 'authentication_azure.md'
+      - Cognito Authentication: 'authentication_cognito.md'
+      - File Authentication: 'authentication_file.md'
+      - Keycloak Authentication: 'authentication_keycloak.md'
+      - LDAP Authentication: 'authentication_ldap.md'
+      - OpenID Connect (OIDC) Authentication: 'authentication_oidc.md'
+
     - Configuration files:
       - Code analysis: 'config_code_quality.md'
       - Code management: 'config_code_management.md'
