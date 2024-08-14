@@ -56,15 +56,15 @@ This section provides examples of how to configure Code Metrics to use specific 
 
 To configure Code Metrics to use Google as an OIDC provider:
 
-1. Create a new project in the [Google Cloud Console](https://console.cloud.google.com/).
-2. Create OAuth 2.0 credentials. Set the permitted redirect URI to `<API_BASE_URL>/oidc/callback`.
-3. Set the `OIDC_ISSUER_BASE_URL` environment variable to `https://accounts.google.com`.
+1. Open or create a new project in the [Google Cloud Console](https://console.cloud.google.com/).
+2. In the console, create an OAuth 2.0 client, under _APIs and services_, then _Credentials_. Set the permitted redirect URI to `<API_BASE_URL>/oidc/callback`.
+3. When deploying the Code Metrics API, set the `OIDC_ISSUER_BASE_URL` environment variable to `https://accounts.google.com`.
 4. Set the `OIDC_CLIENT_ID` and `OIDC_CLIENT_SECRET` environment variables to the client ID and client secret from the OAuth 2.0 credentials.
 5. Set the `OIDC_SCOPES` environment variable to `openid email`.
 6. Set the `OIDC_USER_CLAIM` environment variable to `email`.
 7. (Optional) Set the `OIDC_AUDIENCE` environment variable to your client ID.
 8. (Optional) Set the `OIDC_USE_PKCE` environment variable to `true`.
-9. (Optional) Override the `OIDC_REDIRECT_URI` environment variable to `https://api.example.com/oidc/callback`.
+9. (Optional) Override the `OIDC_REDIRECT_URI` environment variable to `<API_BASE_URL>/oidc/callback`.
 
 Example:
 
