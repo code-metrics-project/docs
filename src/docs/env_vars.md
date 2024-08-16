@@ -1,4 +1,4 @@
-en# Environment variables
+# Environment variables
 
 Some application features are configured using environment variables.
 
