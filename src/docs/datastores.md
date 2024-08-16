@@ -2,10 +2,11 @@
 
 Different datastore implementations are supported.
 
-| Name    | Details                                                                                                                                                                                                                             |
-|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| inmem   | In-memory datastore implementation.️ This datastore implementation holds all items in memory for the lifetime of the process. There is no eviction, so growth is infinite with continued insertions. Do not use this in production. |
-| mongodb | MongoDB datastore. This datastore implementation holds items in an external MongoDB instance. It requires configuration of the connection and authentication details for the MongoDB server.                                        |
+| Name     | Details                                                                                                                                                                                                                             |
+|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| inmem    | In-memory datastore implementation.️ This datastore implementation holds all items in memory for the lifetime of the process. There is no eviction, so growth is infinite with continued insertions. Do not use this in production. |
+| dynamodb | AWS DynamoDB datastore. This datastore implementation holds items in external DynamoDB tables.                                                                                                                                      |
+| mongodb  | MongoDB datastore. This datastore implementation holds items in an external MongoDB instance.                                                                                                                                       |
 
 ## Configuration
 
@@ -13,17 +14,94 @@ Configuration can be set using the `DATASTORE_IMPL` environment variable in back
 
     DATASTORE_IMPL=inmem
 
-### MongoDB configuration
+## Datastore implementations
 
-If the `mongodb` implementation is used, the following environment variables apply:
+### In-memory implementation
 
-    DATABASE_URI=mongodb://code-metrics:changeme@localhost:27017
+The in-memory implementation is the default, and requires no additional configuration. Because it is in-memory, it does not share data between multiple instances of the application.
+
+This datastore implementation holds all items in memory for the lifetime of the process. There is no eviction, so growth is infinite with continued insertions. Do not use this in production.
+
+The following environment variables apply:
+
+    DATASTORE_IMPL=inmem
+
+### DynamoDB implementation
+
+The DynamoDB implementation uses an external DynamoDB instance to store data. It requires valid AWS credentials and permissions.
+
+The following environment variables apply:
+
+    DATASTORE_IMPL=dynamodb
+    DATABASE_NAME=CodeMetrics
+    AWS_REGION=us-east-1
+
+Ensure the Code Metrics backend has the necessary AWS permissions (e.g. using IAM or AWS configuration files) to read (and optionally create) the relevant tables.
+
+The IAM permissions required are:
+
+```
+dynamodb:CreateTable
+dynamodb:DeleteItem
+dynamodb:DescribeTable
+dynamodb:DescribeTimeToLive
+dynamodb:GetItem
+dynamodb:PutItem
+dynamodb:Scan
+dynamodb:UpdateTimeToLive
+```
+
+
+<details>
+<summary>Example IAM policy document</summary>
+
+This example IAM policy scopes access to tables with names in the format `CodeMetrics_*`, but you can be a specific as required by your environment.
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1688577177960",
+      "Action": [
+        "dynamodb:CreateTable",
+        "dynamodb:DeleteItem",
+        "dynamodb:DescribeTable",
+        "dynamodb:DescribeTimeToLive",
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:Scan",
+        "dynamodb:UpdateTimeToLive"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:dynamodb:us-east-1:000000000000:table/CodeMetrics_*"
+    }
+  ]
+}
+```
+</details>
+
+### MongoDB implementation
+
+The MongoDB implementation uses an external MongoDB instance to store data. It requires configuration of the connection and authentication details for the MongoDB server.
+
+The following environment variables apply:
+
+    DATASTORE_IMPL=inmem
     DATABASE_NAME=code-metrics
+    DATABASE_URI=mongodb://code-metrics:changeme@localhost:27017
 
-### Caching
+---
+
+## Caching
 
 Certain metrics can be cached in the datastore, for rapid subsequent retrieval.
 
 Whether the cache is enabled is controlled by this environment variable:
 
     LOOKUP_CACHE_ENABLED=true
+
+Other, more specific cache settings are as follows:
+
+    CACHE_REPO_LIST=true
+    PRECACHE_REPO_LIST=true
+    CACHE_PIPELINE_BUILDS=true
