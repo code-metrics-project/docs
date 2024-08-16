@@ -50,6 +50,7 @@ nav:
       - Pipelines: 'config_pipelines.md'
       - Project management: 'config_project_management.md'
       - Workloads: 'config_workloads.md'
+      - Environment variables: 'env_vars.md'
 
   - Architecture: 'architecture.md'
 
