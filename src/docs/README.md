@@ -48,6 +48,8 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 - [Datastores](./datastores.md)
 - [Secrets management](./secret_management.md)
 - [Authentication](./authentication.md)
+- [Configure workloads](./config_workloads.md)
+- [Environment variables](./env_vars.md)
 
 ## Other
 
