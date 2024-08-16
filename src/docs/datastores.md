@@ -94,14 +94,18 @@ The following environment variables apply:
 
 ## Caching
 
-Certain metrics can be cached in the datastore, for rapid subsequent retrieval.
+Certain metrics can be cached in the datastore, for rapid subsequent retrieval and reduction of API calls to the external data providers.
 
-Whether the cache is enabled is controlled by this environment variable:
+The cache is enabled by this environment variable:
 
     LOOKUP_CACHE_ENABLED=true
 
 Other, more specific cache settings are as follows:
 
-    CACHE_REPO_LIST=true
-    PRECACHE_REPO_LIST=true
-    CACHE_PIPELINE_BUILDS=true
+| Name                     | Details                                          | Default |
+|--------------------------|--------------------------------------------------|---------|
+| CACHE_REPO_LIST          | Cache the VCS repository names.                  | `true`  |
+| PRECACHE_REPO_LIST       | Pre-cache the VCS repository names at startup.   | `true`  |
+| CACHE_PIPELINE_BUILDS    | Cache the pipeline build metadata.               | `true`  |
+| EXPIRY_SECONDS           | Time to cache data if it is for the current day. | `3600`  |
+| REPO_LIST_EXPIRY_SECONDS | Time to cache the VCS repository names.          | `21600` |
