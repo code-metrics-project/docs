@@ -39,13 +39,9 @@ Access:
 
 ## AWS Lambda
 
-The AWS Lambda deployment can be found on the [Releases page](https://github.com/DeloitteDigitalUK/code-metrics/releases).
+Code Metrics can be deployed to AWS Lambda.
 
-Download the `codemetrics-api.zip` file. See the example [template.yaml](../backend/lambda/template.yaml) for an example of how to deploy the Lambda function.
-
-The frontend web UI is a static site, so can be hosted anywhere. You can find the latest version of the web UI on the [Releases page](https://github.com/DeloitteDigitalUK/code-metrics/releases).
-
-Download the `codemetrics-ui.zip` file and host it on a static site. You will need to set the `apiBaseUrl` variable in `config.json` to point to the API endpoint.
+See the [AWS Lambda deployment instructions](./deployment_lambda.md).
 
 ## Kubernetes
 

@@ -16,6 +16,7 @@ This table shows feature support for third party tools.
 
 | Tool                                                                        | Support                                                                 |
 |-----------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| [AWS CodePipeline](https://aws.amazon.com/codepipeline/)                    | 🟡 [Beta](https://github.com/DeloitteDigitalUK/code-metrics/issues/541) |
 | [Azure DevOps](https://azure.microsoft.com/en-gb/products/devops/repos)     | ✅ Supported                                                             |
 | [Bitbucket (Cloud)](https://bitbucket.org/product)                          | ❌ Not yet supported                                                     |
 | [Bitbucket Server](https://www.atlassian.com/software/bitbucket/enterprise) | ❌ Not yet supported                                                     |
