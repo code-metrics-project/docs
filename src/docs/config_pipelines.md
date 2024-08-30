@@ -56,4 +56,45 @@ Within a `pipelines.jenkins` server object:
 2. Add url and access credentials to the url field following the basic auth structure:
    https://`user`:`key`@`jenkins.server.url`
 
-3. Add a list of `branches` you want to have the option to analyse for your projects (TODO: Align with Workloads)
+3. Add a list of `branches` you want to have the option to analyse for your projects
+
+## Dynatrace
+
+Some teams use Dynatrace to monitor their pipelines. This configuration allows you to retrieve data from Dynatrace to monitor the success, duration and frequency of your pipelines.
+
+Within a `pipelines.dynatrace` server object:
+
+1. Add a unique `id` value for the target server.
+2. Add the `url` endpoint of the Dynatrace instance.
+3. Add the `apiKey` value for the Dynatrace API.
+4. Set the `metricSelector` to your query and, optionally, the `entitySelector` to filter the data you want to retrieve.
+5. Set the dimension names to the names of the dimensions of the metric in your query.
+6. Set the `successfulOutcomeValue` to the value that indicates a successful build.
+
+```yaml
+pipelines:
+  dynatrace:
+    servers:
+      - id: "example-dynatrace"
+        url: "https://example-instance.live.dynatrace.com"
+        apiKey: "${secret.dynatrace-api-key}"
+        metricSelector: "your.query.here"
+        #entitySelector: builtin.foo.bar
+        successfulOutcomeValue: "1"
+        dimensionNames:
+          runId: "commit-sha"
+          startDate: "start-time-utc"
+          endDate: "end-time-utc"
+          outcome: "build-success"
+          branch: "branch-name"
+          repository: "repository"
+          jobName: "deploy-job-name"
+```
+
+Here is an example `metricSelector`, which queries a custom metric in Dynatrace, named `example.pipelines.deployment`:
+
+```
+example.pipelines.deployment
+    :splitBy(commit-sha,environment,start-time-utc,end-time-utc,build-success,repository,deploy-job-name)
+    :filter(eq(environment,production))
+```

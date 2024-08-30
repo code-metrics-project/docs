@@ -20,6 +20,7 @@ This table shows feature support for third party tools.
 | [Azure DevOps](https://azure.microsoft.com/en-gb/products/devops/repos)     | ✅ Supported                                                             |
 | [Bitbucket (Cloud)](https://bitbucket.org/product)                          | ❌ Not yet supported                                                     |
 | [Bitbucket Server](https://www.atlassian.com/software/bitbucket/enterprise) | ❌ Not yet supported                                                     |
+| [Dynatrace](https://www.dynatrace.com/) deployment events                   | ✅ Supported                                                             |
 | [GitHub](https://github.com/)                                               | ✅ Supported                                                             |
 | [Gitlab](https://about.gitlab.com/)                                         | ❌ Not yet supported                                                     |
 | [Jenkins](https://www.jenkins.io)                                           | ✅ Supported                                                             |

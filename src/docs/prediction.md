@@ -9,7 +9,7 @@ Generates predictions based on one or two input datasets.
 
 Set the following environment variable in the backend:
 
-    EXPERIMENTAL_FEATURE_PREDICTIONS=true
+    FEATURE_PREDICTIONS=true
 
 ## Implementation notes
 
