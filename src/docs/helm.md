@@ -38,3 +38,8 @@ Alternatively, editing `/etc/hosts` with the name and IP may work as a temporary
 
 When deploying MongoDB as a backing data store, see: [MongoDB Community Kubernetes Operator
 ](https://github.com/mongodb/mongodb-kubernetes-operator/blob/master/README.md) documentation.
+---
+
+## Running periodic cache updates in Kubernetes
+
+You can run periodic cache updates in Kubernetes. See [Trigger a cache refresh](./system_admin.md) for more information.

@@ -48,10 +48,4 @@ aws s3 sync dist/ s3://<bucket-name>/
 
 ## Running periodic cache updates on AWS Lambda
 
-To run periodic cache updates on AWS Lambda, you can schedule a Lambda function to run at regular intervals.
-
-Set the following environment variables in the Lambda function:
-
-```shell
-INVOCATION_MODE=update-cache
-```
+You can run periodic cache updates on AWS Lambda. See [Trigger a cache refresh](./system_admin.md) for more information.
