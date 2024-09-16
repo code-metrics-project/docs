@@ -24,6 +24,7 @@ nav:
   - Query types:
     - Bug culprits: 'query_bug_culprits.md'
     - Bugs: 'query_bugs.md'
+    - DORA metrics: 'dora.md'
     - Pipelines: 'query_pipelines.md'
     - Repository churn: 'query_repo_churn.md'
     - Source code metrics: 'query_source_code.md'
