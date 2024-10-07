@@ -16,6 +16,7 @@ It provides a view of:
 - all bugs
 - test coverage
 - pipeline success rate
+- [DORA metrics](./dora.md)
 
 ![Summary of workload](./img/workload_dashboard.png)
 

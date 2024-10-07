@@ -9,6 +9,8 @@ The metrics are:
 - Time to restore service
 - Change failure rate
 
+To calculate DORA metrics you must set up your deployment configuration. See [Deployment configuration](./config_deployments.md) for more information.
+
 ## Deployment frequency
 
 Deployment frequency is the number of deployments to production per unit of time. This is a measure of how often you deploy code to production.
@@ -32,3 +34,13 @@ Time to restore service is the time it takes to restore service when a service i
 Change failure rate is the percentage of changes that result in degraded service and require remediation. This is a measure of how often your changes cause problems.
 
 ![Graph of change failure rate for a workload over time](img/change_failure_rate.png)
+
+## Where to find DORA metrics
+
+DORA metrics must be enabled for your CodeMetrics instance, using the `FEATURE_DORA_METRICS` environment variable. Once enabled, DORA metrics are available in the Workloads section and each of the four measures can be used in queries.
+
+To view DORA metrics for a workload, navigate to the Workloads section and select the workload you are interested in. Click the `DORA` button to view the DORA metrics for that workload.
+
+To use DORA metrics in queries, navigate to the `Queries` page. Create a new query and select the DORA metric you are interested in from the dropdown list.
+
+See the [Queries section](./queries.md) for further information.

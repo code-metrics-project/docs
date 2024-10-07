@@ -48,6 +48,7 @@ nav:
     - Configuration files:
       - Code analysis: 'config_code_quality.md'
       - Code management: 'config_code_management.md'
+      - Deployment: 'config_deployment.md'
       - Pipelines: 'config_pipelines.md'
       - Project management: 'config_project_management.md'
       - Workloads: 'config_workloads.md'

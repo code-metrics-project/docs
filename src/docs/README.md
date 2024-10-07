@@ -50,6 +50,7 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 - [Secrets management](./secret_management.md)
 - [Authentication](./authentication.md)
 - [Configure workloads](./config_workloads.md)
+- [Configure deployments](./config_deployments.md)
 - [Environment variables](./env_vars.md)
 
 ## Other

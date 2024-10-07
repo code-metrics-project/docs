@@ -51,9 +51,29 @@ Place the license file in the configuration directory. The license is validated 
 
 ---
 
+## Additional configuration
+
+Depending on how you set up your [authentication](./authentication.md) and [secrets management](./secret_management.md), there may be additional files too.
+
+Some advanced settings can be controlled using [environment variables](./env_vars.md).
+
+### User authentication
+
+See the [user authentication](./authentication.md) section.
+
+### Deployments
+
+See the [deployments](./config_deployments.md) section.
+
+### Custom queries
+
+You can define custom queries using a JSON file. See [custom queries](custom_queries.md) for details.
+
+---
+
 ## Advanced configuration
 
-### Locating config files
+### Locating configuration files
 
 The path to the directory containing configuration files is set by the environment variable `CONFIG_DIR`.
 
@@ -72,20 +92,6 @@ Configuration files can be in JSON or YAML format. For example, `remote-config.y
 In the documentation we refer to the YAML filenames, but the same structure applies to JSON format files in line with JSON syntax.
 
 Examples of all configuration files are provided by the project, e.g. `remote-config.yaml.example`.
-
-### Additional configuration
-
-Depending on how you set up your [authentication](./authentication.md) and [secrets management](./secret_management.md), there may be additional files too.
-
-Some advanced settings can be controlled using [environment variables](./env_vars.md).
-
-#### User authentication
-
-See the [user authentication](./authentication.md) section.
-
-#### Custom queries
-
-You can define custom queries using a JSON file. See [custom queries](custom_queries.md) for details.
 
 #### CORS
 

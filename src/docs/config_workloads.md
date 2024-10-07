@@ -197,3 +197,21 @@ repoMappings:
 ```
 
 In this example, the Code Metrics would use the Sonar component key `petclinic` for the repository named `spring-petclinic`. 
+
+## Deployment configuration
+
+To model deployments for a workload, you can reference a deployment configuration by its ID.
+
+```yaml
+workloads:
+- id: team-athena
+  # ...
+  # other workload configuration
+  # ...
+  deployment:
+    deploymentId: my-deployments
+```
+
+In this example, the workload `team-athena` references the deployment configuration `my-deployments`.
+
+To learn more about deployments, see the [deployment configuration](./config_deployments.md) section.
