@@ -37,9 +37,9 @@ Change failure rate is the percentage of changes that result in degraded service
 
 ## Where to find DORA metrics
 
-DORA metrics must be enabled for your CodeMetrics instance, using the `FEATURE_DORA_METRICS` environment variable. Once enabled, DORA metrics are available in the Workloads section and each of the four measures can be used in queries.
+DORA metrics must be enabled for your CodeMetrics instance, by setting the environment variable `FEATURE_DORA_METRICS=true`. Once enabled, DORA metrics are available in the Workloads section and each of the four measures can be used in queries.
 
-To view DORA metrics for a workload, navigate to the Workloads section and select the workload you are interested in. Click the `DORA` button to view the DORA metrics for that workload.
+To view DORA metrics for a workload, navigate to the [Workloads](./workloads.md) section and select the workload you are interested in. Click the `DORA` button to view the DORA metrics for that workload.
 
 To use DORA metrics in queries, navigate to the `Queries` page. Create a new query and select the DORA metric you are interested in from the dropdown list.
 
