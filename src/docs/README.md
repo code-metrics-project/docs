@@ -53,6 +53,13 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 - [Configure deployments](./config_deployments.md)
 - [Environment variables](./env_vars.md)
 
+### Deployment
+- [Deployment overview](./deployment.md)
+- [Docker](./deployment_docker.md)
+- [AWS Lambda](./deployment_lambda.md)
+- [Kubernetes](./helm.md)
+- [Local Node.js](./run_local_node.md)
+
 ## Other
 
 - [Architecture](./architecture.md)

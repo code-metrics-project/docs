@@ -57,6 +57,13 @@ nav:
 
   - Architecture: 'architecture.md'
 
+  - Deployment:
+    - Deployment overview: 'deployment.md'
+    - Docker: 'deployment_docker.md'
+    - AWS Lambda: 'deployment_lambda.md'
+    - Kubernetes: 'helm.md'
+    - "Local Node.js": 'run_local_node.md'
+
   - Other:
     - Prediction: 'prediction.md'
     - Vulnerability report upload: 'vulnerability_report_upload.md'

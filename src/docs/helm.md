@@ -1,4 +1,4 @@
-# Helm Chart
+# Deployment on Kubernetes using Helm
 
 Code Metrics can be deployed on Kubernetes. To ease deployment, the project provides a Helm chart.
 
