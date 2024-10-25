@@ -8,7 +8,7 @@ Managing a large technical solution requires metrics from across the phases of t
 
 In most organisations, this poses common problems:
 
-- Metrics sit across separate systems: your Code quality tool (Sonar), project management tool (Jira or Azure), and source hosting platform (GitHub, Bitbucket or Azure).
+- Metrics sit across separate systems: your Code quality tool (Sonar), project/service management tools (Jira, Azure, ServiceNow), and source hosting platform (GitHub, Bitbucket or Azure).
 - You need to correlate the data from across sources to help identify issues or trends that are difficult to spot on a per-tool, or per-repository basis.
 - There is no easy mechanism to aggregate and query this data for technical leadership.
 
@@ -23,7 +23,8 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 - how test coverage correlates to incidents,
 - how complexity is changing with codebase size,
 - how long pull requests take to review and merge,
-- how much churn has there been in the codebase and
+- how much churn has there been in the codebase,
+- DORA metrics (deployment frequency, change failure rate, time to restore service, lead time for changes), and
 - custom combinations you create.
 
 ## Learn
@@ -31,15 +32,17 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 - [Getting started](./getting_started.md)
 - [Configuration guide](./configuration.md)
 - [Workloads](./workloads.md)
+- [Tags](./tags.md)
 
 ### Queries
 
 - [Overview](./queries.md)
-- [Build and deployment pipelines](./query_pipelines.md)
-- [Repository churn](./query_repo_churn.md)
-- [Bug culprit files](./query_bug_culprits.md)
 - [Bugs and escaped bugs](./query_bugs.md)
+- [Bug culprit files](./query_bug_culprits.md)
 - [DORA metrics](./dora.md)
+- [CI/CD pipelines](./query_pipelines.md)
+- [Repository churn](./query_repo_churn.md)
+- [Source code metrics](./query_source_code.md)
 - [Vulnerabilities](./query_vulnerabilities.md)
 - [Custom queries](./custom_queries.md)
 

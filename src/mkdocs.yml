@@ -19,16 +19,20 @@ nav:
   - Getting started: 'getting_started.md'
   - Configuration guide: 'configuration.md'
   - Workloads: 'workloads.md'
+  - Tags: 'tags.md'
   - Feature support: 'features.md'
 
-  - Query types:
-    - Bug culprits: 'query_bug_culprits.md'
-    - Bugs: 'query_bugs.md'
-    - DORA metrics: 'dora.md'
-    - Pipelines: 'query_pipelines.md'
-    - Repository churn: 'query_repo_churn.md'
-    - Source code metrics: 'query_source_code.md'
-    - Vulnerabilities: 'query_vulnerabilities.md'
+  - Queries and filters:
+    - Introduction: 'queries.md'
+    - Query types:
+      - Overview: 'query_types.md'
+      - Bugs: 'query_bugs.md'
+      - Bug culprits: 'query_bug_culprits.md'
+      - DORA metrics: 'dora.md'
+      - CI/CD pipelines: 'query_pipelines.md'
+      - Repository churn: 'query_repo_churn.md'
+      - Source code metrics: 'query_source_code.md'
+      - Vulnerabilities: 'query_vulnerabilities.md'
     - Custom queries: 'custom_queries.md'
 
   - Configuration:

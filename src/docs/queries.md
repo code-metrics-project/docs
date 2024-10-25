@@ -1,40 +1,50 @@
-# Queries
+# Queries and filters
 
-Information about the different types of queries.
+Code Metrics provides a number of data sources that you can use to explore your data. You can filter and group your data in a number of ways to get the insights you need.
 
-## Supported queries
+These include:
 
-### [Source code metrics](./query_source_code.md)
+- Source code metrics
+- Build and deployment pipelines
+- Repository churn
+- Bug culprit files
+- Bugs and escaped bugs
+- DORA metrics
+- Vulnerabilities
+- Pull Request (PR) metrics
 
-Data about the structure, complexity and health of your codebase.
+See the [query types](./query_types.md) page for more details on each query type.
 
-Metrics include:
+## Query filters
 
-- Test coverage
-- Cyclomatic complexity
-- Codebase size (ncloc)
+When creating a query, you can filter based on a number of criteria, such as:
 
-### [Build and deployment pipelines](./query_pipelines.md)
+- workload/team
+- repository group
+- date
+- custom tags
+- etc.
 
-Duration, success percentage and outcomes of build and deployment pipelines.
+### Adding filters
 
-Metrics include:
+Choose the **Add filter** button on the query screen.
 
-- Pipeline outcomes (successful/failed/aborted)
-- Pipeline success percentage
-- Pipeline execution duration
+![Query_with no_filter](img/query_no_filter.png)
 
-### [Repository churn](./query_repo_churn.md)
+From the drop-down list, add one or more filters:
 
-A metric showing the amount of change in a repository.
+![List of_filter types](img/query_add_filter.png)
 
-### [Bug culprit files](./query_bug_culprits.md)
+> **Note**
+> The list of available filters depends on the queries you have selected.
 
-Identifies files that are frequently changed in response to bug fixes. These are potential 'culprits' for code that needs attention.
+You can add one or more filters:
 
-### [Bugs and escaped bugs](./query_bugs.md)
+![Query_with one_filter](img/query_one_filter.png)
 
-Bugs/defects from the ALM tool, such as Jira. Helpful to correlate against other software quality metrics.
+To remove a filter, click the delete button to the right of the filter:
+
+![Query_with multiple_filters](img/query_multiple_filters.png)
 
 ## Query builder
 

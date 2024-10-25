@@ -36,9 +36,10 @@ This table shows feature support for third party tools.
 
 | Tool                                                                        | Support                                                                 |
 |-----------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| [Azure DevOps](https://azure.microsoft.com/en-gb/products/devops/repos)     | ✅                                                                       |
+| [Azure DevOps](https://azure.microsoft.com/en-gb/products/devops/repos)     | ✅ Supported                                                             |
 | [Bitbucket (Cloud)](https://bitbucket.org/product)                          | ❌ Not yet supported                                                     |
 | [Bitbucket Server](https://www.atlassian.com/software/bitbucket/enterprise) | ❌ Not yet supported                                                     |
 | [GitHub](https://github.com/)                                               | 🟡 [Beta](https://github.com/DeloitteDigitalUK/code-metrics/issues/166) |
 | [Gitlab](https://about.gitlab.com/)                                         | ❌ Not yet supported                                                     |
 | [Jira](https://www.atlassian.com/software/jira)                             | ✅ Supported                                                             |
+| [ServiceNow](https://www.servicenow.com/)                                   | ✅ Supported for incidents                                               |

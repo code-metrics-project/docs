@@ -49,3 +49,28 @@ A list of issue names to match for tickets considered within the instance overal
 **Ticket Priorities**
 
 A list of string values to match for priority options available within the JIRA instance for each ticket type.
+
+## ServiceNow
+
+ServiceNow can be used as an issue provider for incidents.
+
+### Access
+
+To call ServiceNow you'll need to authenticate with a REST API key. See instructions [here](https://www.servicenow.com/community/developer-advocate-blog/inbound-rest-api-keys/ba-p/2854924).
+
+The scope required is limited to read-only access to the Table API, specifically the `incident` table.
+
+### Configuration
+
+Configure the `remote-config.yaml` file configuration within a `projectManagement.servicenow` server object:
+
+```yaml
+projectManagement:
+  servicenow:
+    servers:
+      - url: "https://<your-instance>.service-now.com"
+        authMethod: "BEARER_TOKEN"
+        apiKey: ${secret.SERVICENOW_API_KEY}
+```
+
+Set the `SERVICENOW_API_KEY` secret in your [secrets configuration](./config_secrets.md).
