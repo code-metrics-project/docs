@@ -30,26 +30,26 @@ workloads:
 
 You can filter workloads by tags using the `tags` field in the workload query:
 
-<img src="img/query_add_tag.png" alt="Adding a tag" width="384em"/>
+<img src="/docs/img/query_add_tag.png" alt="Adding a tag" width="384em"/>
 
 For example, to filter workloads by the `department` tag:
 
-<img src="img/query_single_tag.png" alt="Filtering by a single tag" width="380em"/>
+<img src="/docs/img/query_single_tag.png" alt="Filtering by a single tag" width="380em"/>
 
 The possible values for the tag will be displayed in the dropdown menu.
 
 You can also filter workloads that match one of multiple tags:
 
-<img src="img/query_multi_tag.png" alt="Filtering by multiple tags" width="374em"/>
+<img src="/docs/img/query_multi_tag.png" alt="Filtering by multiple tags" width="374em"/>
 
 ## Grouping workloads by tags
 
 You can group your query results by tags using the `tags` field in the workload grouping menu:
 
-<img src="img/query_group_tag.png" alt="Grouping by a tag" width="790em"/>
+<img src="/docs/img/query_group_tag.png" alt="Grouping by a tag" width="790em"/>
 
 Set the tag to group by:
 
-<img src="img/query_group_tag_value.png" alt="Setting the tag to group by" width="816em"/>
+<img src="/docs/img/query_group_tag_value.png" alt="Setting the tag to group by" width="816em"/>
 
 Query results for each workload will be aggregated by the tag value (in this example, by `pod`).
