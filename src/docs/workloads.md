@@ -20,6 +20,10 @@ It provides a view of:
 
 ![Summary of workload](./img/workload_dashboard.png)
 
-You can also view a list of all workloads:
+You can view a list of all workloads:
 
 ![List workloads](./img/workloads_list.png)
+
+## Grouping workloads
+
+Workloads can be grouped together. This is useful for viewing a summary of all workloads in a group. You group workloads using [tags](./tags.md).

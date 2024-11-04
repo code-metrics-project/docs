@@ -6,6 +6,8 @@ This section describes the `workload-config.yaml` configuration file. See the [c
 
 A workload represents one or more repositories, in one or more repository groups. With this concept, you can model a team, an application or a single component.
 
+You can also group workloads using [tags](./tags.md).
+
 > **Note**
 > See the [workload concept](./workloads.md) section.
 
