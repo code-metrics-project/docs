@@ -43,6 +43,7 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 - [CI/CD pipelines](./query_pipelines.md)
 - [Repository churn](./query_repo_churn.md)
 - [Source code metrics](./query_source_code.md)
+- [Changes outside working pattern](./query_working_pattern.md)
 - [Vulnerabilities](./query_vulnerabilities.md)
 - [Custom queries](./custom_queries.md)
 

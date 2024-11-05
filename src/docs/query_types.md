@@ -40,6 +40,10 @@ Bugs/defects from the ALM tool, such as Jira. Helpful to correlate against other
 
 Deployment frequency, change failure rate, time to restore service and lead time for changes.
 
+### [Changes outside working pattern](./query_working_pattern.md)
+
+A metric showing the number of changes (commits) made outside of a team's working hours or days.
+
 ### [Vulnerabilities](./query_vulnerabilities.md)
 
 Number and severity of vulnerabilities for a repository.
