@@ -13,10 +13,17 @@ Each workload has a summary page, showing recent trends.
 
 It provides a view of:
 
-- all bugs
+- bugs
 - test coverage
 - pipeline success rate
+
+It also provides links to drill down into:
+
 - [DORA metrics](./dora.md)
+- recent changes (commits, merged PRs etc.)
+- bugs and incidents
+- build health
+- bug analysis
 
 ![Summary of workload](./img/workload_dashboard.png)
 
