@@ -2,6 +2,19 @@
 
 This section is part of the `remote-config.yaml` configuration file. See the [configuration overview](./configuration.md) for further information.
 
+## Overview
+
+You can report on, query and analyse bugs/defect tickets you've logged in your project management system, such as Jira.
+
+## Configuring bugs
+
+To configure bugs, you need to:
+
+- add your project management tool to the `ticketManagement` section of the [remote configuration](./config_project_management.md) file
+- refer to the server ID and type within the `projectManagement` section of a workload configuration
+
+---
+
 ## Azure DevOps (ADO)
 
 ### Access
@@ -11,7 +24,49 @@ This section is part of the `remote-config.yaml` configuration file. See the [co
 1. Create an Azure Personal Access Token.  
    To call ADO you'll need to authenticate with a PAT. See instructions [here](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page).
 
-2. Paste the result in your respective `remote-config.yaml` file configuration within a `projectManagement.azure` server object's `apiKey` field.
+2. Paste the result in your respective `remote-config.yaml` file configuration within a `ticketManagement.azure` server object's `apiKey` field.
+
+### Example
+
+Extract from the `remote-config.yaml` file:
+
+```yaml
+ticketManagement:
+  azure:
+    servers:
+      - id: "example-azure"
+        url: "https://dev.azure.com/my-organization"
+        authMethod: "BEARER_TOKEN"
+        apiKey: ${secret.AZURE_DEVOPS_PAT}
+        defaults:
+          ticketPriorities:
+            - "0"
+            - "1"
+            - "2"
+            - "3"
+            - "4"
+          ticketTypes:
+            - "Bug"
+            - "Defect"
+            - "Issue"
+```
+
+> **Note**
+> Set the `AZURE_DEVOPS_PAT` secret in your [secrets configuration](./secret_management.md).
+
+Extract from the `workload-config.yaml` file:
+
+```yaml
+workloads:
+- id: "my-workload"
+  # ... other workload config
+  projectManagement:
+    type: azure
+    serverId: example-azure
+    team: "my-team"
+    projectName: "MyProject"
+    teamFilterQuery: "AreaPath eq 'MyProject\\MyTeam'"
+```
 
 ### Defaults
 
@@ -34,17 +89,53 @@ For Jira set the server URL and authentication details, using either:
 
 To call JIRA you'll need to authenticate with either an API token, or a combination of email address and API token. See instructions [here](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
 
-Add the JIRA token (and email address if used) to your `remote-config.yaml` file configuration within a `projectManagement.jira` server object.
+Add the JIRA token (and email address if used) to your `remote-config.yaml` file configuration within a `ticketManagement.jira` server object.
+
+
+### Example
+
+Extract from the `remote-config.yaml` file:
+
+```yaml
+ticketManagement:
+  jira:
+    servers:
+      - id: "example-jira"
+        url: "https://example.atlassian.net"
+        authMethod: "BEARER_TOKEN"
+        apiKey: ${secret.JIRA_API_TOKEN}
+        defaults:
+          ticketPriorities:
+            - Lowest
+            - Low
+            - Medium
+            - High
+            - Highest
+          ticketTypes:
+            - "Bug"
+            - "Defect"
+            - "Issue"
+```
+
+> **Note**
+> Set the `JIRA_API_TOKEN` secret in your [secrets configuration](./secret_management.md).
+
+Extract from the `workload-config.yaml` file:
+
+```yaml
+workloads:
+- id: "my-workload"
+  # ... other workload config
+  projectManagement:
+    type: jira
+    serverId: example-jira
+    projectName: "MyProject"
+    teamFilterQuery: "team = 'MyTeam'"
+```
 
 ### Defaults
 
-**Bugs**
-
 A list of issue names to match for tickets considered within the instance overall to match to the classification of a 'Bug' or 'Defect' type of ticket (may consider escaped and caught issues in delivery to production).
-
-**Incidents**
-
-A list of issue names to match for tickets considered within the instance overall to match to the classification of an 'Incident' type of ticket (considers escaped tickets delivered to production only).
 
 **Ticket Priorities**
 
@@ -62,15 +153,17 @@ The scope required is limited to read-only access to the Table API, specifically
 
 ### Configuration
 
-Configure the `remote-config.yaml` file configuration within a `projectManagement.servicenow` server object:
+Configure the `remote-config.yaml` file configuration within a `ticketManagement.servicenow` server object:
 
 ```yaml
-projectManagement:
+ticketManagement:
   servicenow:
     servers:
-      - url: "https://<your-instance>.service-now.com"
+      - id: "my-servicenow"
+        url: "https://<your-instance>.service-now.com"
         authMethod: "BEARER_TOKEN"
         apiKey: ${secret.SERVICENOW_API_KEY}
 ```
 
-Set the `SERVICENOW_API_KEY` secret in your [secrets configuration](./config_secrets.md).
+> **Note**
+> Set the `SERVICENOW_API_KEY` secret in your [secrets configuration](./secret_management.md).

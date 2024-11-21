@@ -19,7 +19,8 @@ This file has a section for each type of external system:
 -   **Code Management** - See how to [configure code management](./config_code_management.md) settings.
 -   **Pipelines** - See how to [configure pipelines](./config_pipelines.md) settings.
 -   **Code Quality** - See how to [configure code quality](./config_code_quality.md) settings.
--   **Project Management** - See how to [configure project management](./config_project_management.md) settings.
+-   **Project Management (bugs)** - See how to [configure project management](./config_project_management.md) settings.
+-   **Production Incidents** - See how to [configure incidents](./config_incidents.md) settings.
 
 > **Note**
 > Supported external systems are described in [the features section](./features.md).

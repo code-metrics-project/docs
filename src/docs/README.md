@@ -44,6 +44,7 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 - [Repository churn](./query_repo_churn.md)
 - [Source code metrics](./query_source_code.md)
 - [Changes outside working pattern](./query_working_pattern.md)
+- [Production incidents](./query_incidents.md)
 - [Vulnerabilities](./query_vulnerabilities.md)
 - [Custom queries](./custom_queries.md)
 
@@ -55,9 +56,12 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 - [Authentication](./authentication.md)
 - [Configure workloads](./config_workloads.md)
 - [Configure deployments](./config_deployments.md)
+- [Configure project management (bugs)](./config_project_management.md)
+- [Configure incidents](./config_incidents.md)
 - [Environment variables](./env_vars.md)
 
 ### Deployment
+
 - [Deployment overview](./deployment.md)
 - [Docker](./deployment_docker.md)
 - [AWS Lambda](./deployment_lambda.md)
