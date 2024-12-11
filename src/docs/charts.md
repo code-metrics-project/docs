@@ -11,7 +11,7 @@ The supported chart types are:
 
 Select the chart type that best suits your data and the story you want to tell.
 
-<img src="./docs/img/chart_type_selector.png" alt="Chart types" width="392em" />
+<img src="/docs/img/chart_type_selector.png" alt="Chart types" width="392em" />
 
 ## Chart types
 
@@ -31,7 +31,7 @@ Bar charts are used to compare different categories of data. They are particular
 
 Doughnut charts are used to show the proportion of different categories of data. They are particularly useful for showing the distribution of data.
 
-<img src="./docs/img/doughnut_chart.png" alt="Doughnut chart" width="354em" />
+<img src="/docs/img/doughnut_chart.png" alt="Doughnut chart" width="354em" />
 
 ### Table
 
