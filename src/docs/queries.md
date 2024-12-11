@@ -2,6 +2,8 @@
 
 Code Metrics provides a number of data sources that you can use to explore your data. You can filter and group your data in a number of ways to get the insights you need.
 
+Visualise your data using a variety of [chart types](./charts.md), such as line, bar, doughnut and table.
+
 These include:
 
 - Source code metrics

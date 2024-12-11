@@ -98,3 +98,17 @@ example.pipelines.deployment
     :splitBy(commit-sha,environment,start-time-utc,end-time-utc,build-success,repository,deploy-job-name)
     :filter(eq(environment,production))
 ```
+
+## No pipeline provider
+
+In the case where no pipeline provider is used, the `pipelines` type should be set to `none`.
+
+```yaml
+# remote-config.yaml
+---
+pipelines:
+   none:
+      - id: none
+```
+
+In the associated [workflow configuration](./config_workflow.md), the `pipelines` type should be set to `none`.
