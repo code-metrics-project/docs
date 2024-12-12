@@ -37,7 +37,6 @@ nav:
       - Vulnerabilities: 'query_vulnerabilities.md'
       - Change types: 'query_change_types.md'
     - Chart types: 'charts.md'
-    - Custom queries: 'custom_queries.md'
 
   - Configuration:
     - Overview: 'configuration.md'
@@ -62,6 +61,7 @@ nav:
       - Production incidents: 'config_incidents.md'
       - Workloads: 'config_workloads.md'
 
+    - Custom queries: 'custom_queries.md'
     - Environment variables: 'env_vars.md'
 
   - Architecture: 'architecture.md'

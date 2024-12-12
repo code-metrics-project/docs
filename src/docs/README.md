@@ -48,7 +48,6 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 - [Vulnerabilities](./query_vulnerabilities.md)
 - [Change types](./query_change_types.md)
 - [Chart types](charts.md)
-- [Custom queries](./custom_queries.md)
 
 ### Configuration
 
@@ -61,6 +60,7 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 - [Configure project management (bugs)](./config_project_management.md)
 - [Configure incidents](./config_incidents.md)
 - [Environment variables](./env_vars.md)
+- [Custom queries](./custom_queries.md)
 
 ### Deployment
 
