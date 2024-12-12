@@ -54,3 +54,7 @@ Metrics about pull requests, such as:
 
 - PR duration
 - PR size
+
+### [Change types](./query_change_types.md)
+
+Types of changes that teams are making to the codebase.

@@ -46,6 +46,7 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 - [Changes outside working pattern](./query_working_pattern.md)
 - [Production incidents](./query_incidents.md)
 - [Vulnerabilities](./query_vulnerabilities.md)
+- [Change types](./query_change_types.md)
 - [Chart types](charts.md)
 - [Custom queries](./custom_queries.md)
 
