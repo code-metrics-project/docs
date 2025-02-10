@@ -28,6 +28,7 @@ Configure the `codeAnalysis.sonar` server object in the `remote-config.yaml` fil
 > You should strongly prefer using the [secrets management](./secret_management.md) mechanism to store the token,
 > rather than storing it directly within the configuration file.
 
+If no `authMethod` is specified then `BASIC_AUTH` is used.
 ```yaml
 # remote-config.yaml
 ---
@@ -37,6 +38,21 @@ codeAnalysis:
       - id: example-sonar
         url: https://example-sonar-server
         apiKey: "${secret.SONAR_API_KEY}"
+        authMethod: BEARER_TOKEN
+```
+
+
+The branch to use for sonar (as the default branch on sonar server may not match the repo branch used) can also be specified on a per workload config. If omitted it will default to main.
+
+```yaml
+# workload-config.yaml
+---
+workloads:
+  - id: athena
+    codeAnalysis:
+      type: sonar
+      serverId: example-sonar
+      branch: primary
 ```
 
 ### Component name prefix
