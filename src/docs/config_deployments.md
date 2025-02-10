@@ -1,6 +1,6 @@
 # Configuration: Deployments
 
-This section describes the `deploy-config.yaml` configuration file. See the [configuration overview](./configuration.md) for further information.
+This section describes the `pipeline-config.yaml` configuration file. See the [configuration overview](./configuration.md) for further information.
 
 ## Overview
 
@@ -25,9 +25,9 @@ To calculate deployment metrics, CodeMetrics needs to know which commit a deploy
 Here is how you might configure a single workload to have a deployment stage:
 
 ```yaml
-# deploy-config.yaml
+# pipeline-config.yaml
 ---
-deployments:
+stages:
   - id: my-deployments
     description: The deployment stage of our pipeline
     type: github
@@ -74,12 +74,12 @@ Some teams publish their deployment events to Dynatrace. If your team does this,
 
 First, ensure you have [configured your Dynatrace pipeline provider](./config_pipelines.md).
 
-Then, configure the deployment provider in `deploy-config.yaml`:
+Then, configure the deployment provider in `pipeline-config.yaml`:
 
 ```yaml
-# deploy-config.yaml
+# pipeline-config.yaml
 ---
-deployments:
+stages:
   - id: dt-deployment-events
     description: Dynatrace deployment events
     type: dynatrace
@@ -105,9 +105,9 @@ In some cases, your deployment job names may not match your repository names. Yo
 Here is an example of how you might map your deployment jobs to your repositories:
 
 ```yaml
-# deploy-config.yaml
+# pipeline-config.yaml
 ---
-deployments:
+stages:
   - id: my-deployments
     description: The deployment stage of our pipeline
     type: github
