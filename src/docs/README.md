@@ -27,6 +27,10 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 - DORA metrics (deployment frequency, change failure rate, time to restore service, lead time for changes), and
 - custom combinations you create.
 
+<img src="/docs/img/pipeline_health.png" alt="Pipeline health" height="220em" />
+<img src="/docs/img/time_to_restore_service.png" alt="Time to restore service" height="220em" />
+<img src="/docs/img/coverage_summary_cropped.png" alt="Chart types" height="220em" />
+
 ## Learn
 
 - [Getting started](./getting_started.md)
