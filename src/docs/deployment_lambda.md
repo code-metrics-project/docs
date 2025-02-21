@@ -7,6 +7,7 @@ This document describes how to deploy Code Metrics on AWS Lambda.
 ## Prerequisites
 
 - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
+- Node.js 20.x or later
 
 ## Deployment
 
