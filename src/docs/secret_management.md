@@ -27,6 +27,13 @@ When Code Metrics parses your configuration files and it encounters a secret pla
 
 By default, a file-based secrets resolver is used. There are other, more secure, secrets resolvers.
 
+You configure one of the following secret resolvers:
+
+| Name           | Details                                            |
+|----------------|----------------------------------------------------|
+| file           | Secrets are read from a file named `secrets.yaml`. |
+| secretsmanager | Secrets are read from AWS Secrets Manager.         |
+
 Set the resolver to use with the `SECRET_RESOLVER_IMPL` environment variable.
 
 > For example:
@@ -34,6 +41,12 @@ Set the resolver to use with the `SECRET_RESOLVER_IMPL` environment variable.
 > ```
 > SECRET_RESOLVER_IMPL=file
 > ```
+
+---
+
+## Secret resolver providers
+
+This section lists the supported secret resolvers.
 
 ### File-based resolver (default)
 
