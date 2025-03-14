@@ -50,3 +50,12 @@ aws s3 sync dist/ s3://<bucket-name>/
 ## Running periodic cache updates on AWS Lambda
 
 You can run periodic cache updates on AWS Lambda. See [Trigger a cache refresh](./system_admin.md) for more information.
+
+---
+
+## Troubleshooting
+
+To troubleshoot issues with the AWS Lambda deployment, try the following:
+
+- Set the `LOG_LEVEL` to `2` environment variable to get more detailed logs.
+- Set the `NODE_OPTIONS=--enable-source-maps` environment variable to enable source maps, which will provide a proper stack trace.

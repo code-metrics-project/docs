@@ -167,3 +167,27 @@ ticketManagement:
 
 > **Note**
 > Set the `SERVICENOW_API_KEY` secret in your [secrets configuration](./secret_management.md).
+
+## No project management provider
+
+In the case where no project management provider is used, the `ticketManagement` type should be set to `none`.
+
+```yaml
+# remote-config.yaml
+---
+ticketManagement:
+  none:
+    - id: none
+```
+
+In the associated [workflow configuration](./config_workflow.md), the `projectManagement` type should be set to `none`.
+
+```yaml
+# workload-config.yaml
+---
+workloads:
+  - id: athena
+    projectManagement:
+      type: none
+      serverId: none
+```

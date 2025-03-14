@@ -107,8 +107,18 @@ In the case where no pipeline provider is used, the `pipelines` type should be s
 # remote-config.yaml
 ---
 pipelines:
-   none:
-      - id: none
+  none:
+    - id: none
 ```
 
 In the associated [workflow configuration](./config_workflow.md), the `pipelines` type should be set to `none`.
+
+```yaml
+# workload-config.yaml
+---
+workloads:
+  - id: athena
+    pipelines:
+      type: none
+      serverId: none
+```

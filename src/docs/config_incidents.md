@@ -133,3 +133,27 @@ workloads:
     tableName: "non-standard-table-name"
     teamFilterQuery: "project=MYPROJECT"
 ```
+
+## No incident management provider
+
+In the case where no incident management provider is used, the `ticketManagement` type should be set to `none`.
+
+```yaml
+# remote-config.yaml
+---
+ticketManagement:
+  none:
+    - id: none
+```
+
+In the associated [workflow configuration](./config_workflow.md), the `incidents` type should be set to `none`.
+
+```yaml
+# workload-config.yaml
+---
+workloads:
+  - id: athena
+    incidents:
+      type: none
+      serverId: none
+```
