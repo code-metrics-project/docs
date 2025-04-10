@@ -106,6 +106,34 @@ ticketManagement:
 > **Note**
 > Set the `SERVICENOW_API_KEY` secret in your [secrets configuration](./secret_management.md).
 
+#### Authentication methods
+
+There are several authentication methods available for ServiceNow:
+
+| Auth method    | Behaviour                                                                 |
+|----------------|---------------------------------------------------------------------------|
+| `BASIC_AUTH`   | Uses the `email` and API key in the HTTP Basic Authentication method.     |
+| `BEARER_TOKEN` | Sends the API key in the `Authorization` header with the `Bearer` prefix. |
+| `CUSTOM`       | Sends the API key in the `x-sn-apikey` header.                            |
+
+If you do not wish to use a static API key, you can instead use an OAuth refresh token, which will be used to obtain a short-lived access token when required. Using a refresh token requires the following configuration:
+
+```yaml
+ticketManagement:
+  servicenow:
+    servers:
+      - id: "my-servicenow"
+        url: "https://<your-instance>.servicenow.com"
+        authMethod: "BEARER_TOKEN"
+        clientId: "${secret.SERVICENOW_CLIENT_ID}"
+        clientSecret: "${secret.SERVICENOW_CLIENT_SECRET}"
+        refreshToken: "${secret.SERVICENOW_REFRESH_TOKEN}"
+        tokenUrl: "https://<your-instance>.service-now.com/oauth_token.do"
+```
+
+> **Note**
+> Set the `SERVICENOW_CLIENT_ID`, `SERVICENOW_CLIENT_SECRET` and `SERVICENOW_REFRESH_TOKEN` secrets in your [secrets configuration](./secret_management.md).
+
 #### Workload configuration example
 
 This is a snippet from the workload configuration file:
