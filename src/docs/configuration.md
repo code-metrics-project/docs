@@ -78,13 +78,23 @@ You can define custom queries using a JSON file. See [custom queries](custom_que
 
 The path to the directory containing configuration files is set by the environment variable `CONFIG_DIR`.
 
-> This path defaults to the directory containing the `backend` component, such as `/backend` in the Docker container.
+> This path defaults to the working directory, or `/backend/config` when using the CodeMetrics Docker image.
 
 For example:
 
 ```
 CONFIG_DIR=/path/to/config/files
 ```
+
+#### Multiple configuration directories
+
+You can specify multiple configuration directories by separating them with a comma.
+
+```
+CONFIG_DIR=/path/to/foo,/path/to/bar
+```
+
+Configuration files will be discovered in the order the directories are listed.
 
 ### File format
 

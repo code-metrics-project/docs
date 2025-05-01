@@ -92,4 +92,4 @@ See a list of [supported features](./features.md) for third party tools.
 This documentation is intended for consumption by Code Metrics project maintainers.
 
 - [Release process](./release.md)
-- [Mocks](../backend/mocks/README.md)
+- [Mocks](../mocks/README.md)
