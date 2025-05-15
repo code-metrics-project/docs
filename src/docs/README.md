@@ -91,5 +91,7 @@ See a list of [supported features](./features.md) for third party tools.
 
 This documentation is intended for consumption by Code Metrics project maintainers.
 
-- [Release process](./release.md)
+- [Developer documentation](./dev/README.md)
+- [Standards and patterns](./dev/standards_patterns.md)
 - [Mocks](../mocks/README.md)
+- [Release process](./dev/release.md)

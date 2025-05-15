@@ -7,6 +7,7 @@ Different datastore implementations are supported.
 | inmem    | In-memory datastore implementation.️ This datastore implementation holds all items in memory for the lifetime of the process. There is no eviction, so growth is infinite with continued insertions. Do not use this in production. |
 | dynamodb | AWS DynamoDB datastore. This datastore implementation holds items in external DynamoDB tables.                                                                                                                                      |
 | mongodb  | MongoDB datastore. This datastore implementation holds items in an external MongoDB instance.                                                                                                                                       |
+| nedb     | NeDB datastore. This datastore implementation holds items in an external nedb database.                                                                                                                                             |
 
 ## Configuration
 
@@ -25,6 +26,18 @@ This datastore implementation holds all items in memory for the lifetime of the 
 The following environment variables apply:
 
     DATASTORE_IMPL=inmem
+
+### Local file database implementation
+
+The Local DB implementation uses an external file to store data. It is a lightweight, embedded database.
+It is a good option for local use, but not recommended for production use.
+
+The following environment variables apply:
+
+    DATASTORE_IMPL=localdb
+    DATASTORE_PATH=/path/to/code-metrics.db
+
+Leaving the `DATASTORE_PATH` blank will use an in-memory version of the DB.
 
 ### DynamoDB implementation
 

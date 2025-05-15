@@ -75,3 +75,35 @@ See the [LDAP Authentication](./authentication_ldap.md) documentation for more i
 If you are using [Keycloak](https://www.keycloak.org/) as your identity provider, you can use the Direct Grant flow to authenticate users. This is a backend API call from the CodeMetrics API server to the Keycloak server.
 
 See the [Keycloak Direct Grant Authentication](./authentication_keycloak.md) documentation for more information.
+
+## Automatic Login
+
+The Frontend supports automatically logging in a generic user via config.
+This is useful for demo purposes, or for when a user that does not require authentication such as running locally.
+
+> [!WARNING]
+> You should not enable this in a hosted production environment.
+
+### Configuring Automatic Login
+
+Note: This feature only works with flows that use the webUI for password entry. 
+Flows such as OIDC that require a redirect to an external provider will not work with this feature.
+
+To configure automatic login:
+1. Update the config file for the frontend server to include the following:
+
+```json
+{ "apiBaseUrl": "<URL to the backend API>:<port>",
+  "auth": {
+    "required": false,
+    "provided":
+    {
+      "user":"Username",
+      "pass":"Password"
+    }
+  }
+}
+```
+4. Start the frontend server. 
+
+The frontend server will automatically log in the user and redirect to the dashboard.
