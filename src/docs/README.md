@@ -1,4 +1,4 @@
-# <img alt="Code Metrics logo" src="img/codemetrics_logo_small.png" width="384em"/>
+# <img alt="CodeMetrics logo" src="img/codemetrics_logo_small.png" width="384em"/>
 
 As your codebase grows, so does the complexity of managing it. As an engineering leader overseeing many code repositories or multiple product teams it is challenging to know where to focus attention. At scale, it is especially hard to spot bad trends before they manifest as risks and identify areas for improvement.
 
@@ -12,11 +12,11 @@ In most organisations, this poses common problems:
 - You need to correlate the data from across sources to help identify issues or trends that are difficult to spot on a per-tool, or per-repository basis.
 - There is no easy mechanism to aggregate and query this data for technical leadership.
 
-## How Code Metrics helps
+## How CodeMetrics helps
 
-Code Metrics is a tool that aggregates and analyses engineering data across a large and distributed codebase. It provides engineering leaders with visibility of software health across teams and is used on top of existing software engineering tools.
+CodeMetrics is a tool that aggregates and analyses engineering data across a large and distributed codebase. It provides engineering leaders with visibility of software health across teams and is used on top of existing software engineering tools.
 
-At its core, Code Metrics provides a collection of whole project lifecycle code quality analysis tools. It enables you to combine sources to look for correlations, to answer questions over time such as:
+At its core, CodeMetrics provides a collection of whole project lifecycle code quality analysis tools. It enables you to combine sources to look for correlations, to answer questions over time such as:
 
 - the bug to change ratio (related to change failure rate),
 - which files are frequently implicated when bugs are fixed,
@@ -80,6 +80,7 @@ At its core, Code Metrics provides a collection of whole project lifecycle code 
 - [Architecture](./architecture.md)
 - [Vulnerability report upload](./vulnerability_report_upload.md)
 - [Prediction](./prediction.md)
+- [Promo Site](./promosite.md)
 
 ## Feature support
 
@@ -89,7 +90,7 @@ See a list of [supported features](./features.md) for third party tools.
 
 ## Design and build
 
-This documentation is intended for consumption by Code Metrics project maintainers.
+This documentation is intended for consumption by CodeMetrics project maintainers.
 
 - [Developer documentation](./dev/README.md)
 - [Standards and patterns](./dev/standards_patterns.md)

@@ -21,7 +21,7 @@ We welcome contributions from everyone! Before you start, please familiarise you
 
 When making changes:
 
-1. Follow our coding standards and architectural patterns
+1. Follow our [coding standards](./standards_patterns.md) and [architectural patterns](../architecture.md)
 2. Write tests for your changes
 3. Use [Conventional Commits](https://www.conventionalcommits.org/) for your commit messages
 4. Create focused pull requests that address a single concern

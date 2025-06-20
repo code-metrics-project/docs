@@ -53,7 +53,11 @@ See the [instructions for using Helm](./helm.md).
 
 See the [Node.js deployment instructions](./run_local_node.md).
 
----
+## Desktop Application
+Code Metrics can be run as a localised application on your desktop. This allows you to run the tool without needing to set up a server or use a web browser.
+
+See the [desktop application instructions](./desktop.md).
+
 
 ## Next steps
 

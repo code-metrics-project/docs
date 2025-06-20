@@ -6,7 +6,7 @@ This document outlines the coding standards, architectural patterns, and develop
 
 ### Release
 
-- We use [Semantic Release](https://semantic-release.gitbook.io/semantic-release/) for versioning and changelogs. See the [release process](./release.md) for more details.
+- We use [Semantic Versioning](https://semver.org/). See the [release process](./release.md) for more details.
 
 ### Version Control
 
