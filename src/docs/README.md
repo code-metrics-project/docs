@@ -24,7 +24,8 @@ At its core, CodeMetrics provides a collection of whole project lifecycle code q
 - how complexity is changing with codebase size,
 - how long pull requests take to review and merge,
 - how much churn has there been in the codebase,
-- DORA metrics (deployment frequency, change failure rate, time to restore service, lead time for changes), and
+- DORA metrics (deployment frequency, change failure rate, time to restore service, lead time for changes),
+- what quality gates are configured across repositories and services, and
 - custom combinations you create.
 
 <img src="/docs/img/pipeline_health.png" alt="Pipeline health" height="220em" />
@@ -38,6 +39,16 @@ At its core, CodeMetrics provides a collection of whole project lifecycle code q
 - [Workload summary](./workloads.md)
 - [CI/CD pipelines](./pipelines.md)
 - [Tags](./tags.md)
+
+## Integrating with the CodeMetrics API
+
+- [API Integration Overview](./integration_api.md)
+- [Authenticating to the CodeMetrics API](./integration_api_authentication.md)
+
+### Quality Gates
+
+- [User guide](./quality_gates_user.md)
+- [Administration guide](./quality_gates_admin.md)
 
 ### Queries
 
