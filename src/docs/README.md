@@ -32,23 +32,13 @@ At its core, CodeMetrics provides a collection of whole project lifecycle code q
 <img src="/docs/img/time_to_restore_service.png" alt="Time to restore service" height="220em" />
 <img src="/docs/img/coverage_summary_cropped.png" alt="Chart types" height="220em" />
 
-## Learn
+## User documentation
 
-- [Getting started](./getting_started.md)
-- [Configuration guide](./configuration.md)
+This documentation is intended for users of Code Metrics, such as engineers, QA or leadership.
+
 - [Workload summary](./workloads.md)
 - [CI/CD pipelines](./pipelines.md)
 - [Tags](./tags.md)
-
-## Integrating with the CodeMetrics API
-
-- [API Integration Overview](./integration_api.md)
-- [Authenticating to the CodeMetrics API](./integration_api_authentication.md)
-
-### Quality Gates
-
-- [User guide](./quality_gates_user.md)
-- [Administration guide](./quality_gates_admin.md)
 
 ### Queries
 
@@ -65,8 +55,19 @@ At its core, CodeMetrics provides a collection of whole project lifecycle code q
 - [Change types](./query_change_types.md)
 - [Chart types](charts.md)
 
+### Other features
+
+- [Quality gates user guide](./quality_gates_user.md)
+- [Vulnerability report upload](./vulnerability_report_upload.md)
+- [Prediction](./prediction.md)
+
+## Administration and configuration
+
+This documentation is intended for people deploying and configuring Code Metrics.
+
 ### Configuration
 
+- [Getting started](./getting_started.md)
 - [Configuration guide](./configuration.md)
 - [Datastores](./datastores.md)
 - [Secrets management](./secret_management.md)
@@ -77,25 +78,29 @@ At its core, CodeMetrics provides a collection of whole project lifecycle code q
 - [Configure incidents](./config_incidents.md)
 - [Environment variables](./env_vars.md)
 - [Custom queries](./custom_queries.md)
+- [Quality gates administration guide](./quality_gates_admin.md)
 
 ### Deployment
 
+- [Architecture](./architecture.md)
 - [Deployment overview](./deployment.md)
 - [Docker](./deployment_docker.md)
 - [AWS Lambda](./deployment_lambda.md)
 - [Kubernetes](./helm.md)
 - [Local Node.js](./run_local_node.md)
 
-## Other
+### Administration Portal
 
-- [Architecture](./architecture.md)
-- [Vulnerability report upload](./vulnerability_report_upload.md)
-- [Prediction](./prediction.md)
-- [Promo Site](./promosite.md)
+- [Administration Portal](./admin_portal.md)
 
 ## Feature support
 
 See a list of [supported features](./features.md) for third party tools.
+
+## Integrating with the CodeMetrics API
+
+- [API Integration Overview](./integration_api.md)
+- [Authenticating to the CodeMetrics API](./integration_api_authentication.md)
 
 ---
 
@@ -107,3 +112,4 @@ This documentation is intended for consumption by CodeMetrics project maintainer
 - [Standards and patterns](./dev/standards_patterns.md)
 - [Mocks](../mocks/README.md)
 - [Release process](./dev/release.md)
+- [Promotional website](./promosite.md)
