@@ -22,6 +22,7 @@ nav:
       - Workload summary: "workloads.md"
       - CI/CD pipelines: "pipelines.md"
       - Tags: "tags.md"
+      - Repositories: "repositories.md"
   - Feature support: "features.md"
 
   - Queries and filters:
@@ -87,6 +88,7 @@ nav:
 
   - Other:
       - Prediction: "prediction.md"
+      - Machine learning forecasts: "machine_learning.md"
 
   - Administration Portal: "admin_portal.md"
 
