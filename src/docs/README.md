@@ -59,8 +59,6 @@ This documentation is intended for users of CodeMetrics, such as engineers, QA o
 
 - [Quality gates user guide](./quality_gates_user.md)
 - [Repositories](./repositories.md)
-- [Prediction](./prediction.md)
-- [Machine learning forecasts](./machine_learning.md)
 
 ### Security
 
@@ -112,6 +110,8 @@ See a list of [supported features](./features.md) for third party tools.
 ## CodeMetrics and AI
 
 - [AI Summaries](./ai_summaries.md)
+- [Prediction](./prediction.md)
+- [Machine learning forecasts](./machine_learning.md)
 - [MCP Server Setup](./mcp_server.md)
 
 ---

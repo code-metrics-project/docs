@@ -89,8 +89,6 @@ nav:
       - "Local Node.js": "run_local_node.md"
 
   - Other:
-      - Prediction: "prediction.md"
-      - Machine learning forecasts: "machine_learning.md"
       - Internationalisation (i18n): "internationalisation.md"
 
   - Administration Portal: "admin_portal.md"
@@ -101,4 +99,6 @@ nav:
 
   - CodeMetrics and AI:
       - AI Summaries: "ai_summaries.md"
+      - Prediction: "prediction.md"
+      - Machine learning forecasts: "machine_learning.md"
       - MCP Server Setup: "mcp_server.md"
