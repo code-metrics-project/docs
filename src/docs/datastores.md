@@ -1,6 +1,10 @@
 # Datastores
 
-Different datastore implementations are supported.
+CodeMetrics uses a datastore to persist data such as [caching](./caching.md), query results, and configuration. Choosing the right datastore for your environment affects performance, scalability, and operational complexity.
+
+For lightweight or local use, the in-memory or local file implementations require no external infrastructure. For production deployments, a managed datastore such as DynamoDB or MongoDB is recommended to ensure data durability and support multiple application instances running concurrently.
+
+The following datastore implementations are supported:
 
 | Name     | Details                                                                                                                                                                                                                            |
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -120,22 +124,3 @@ The following environment variables apply:
     DATABASE_NAME=code-metrics
     DATABASE_URI=mongodb://code-metrics:changeme@localhost:27017
 
----
-
-## Caching
-
-Certain metrics can be cached in the datastore, for rapid subsequent retrieval and reduction of API calls to the external data providers.
-
-The cache is enabled by this environment variable:
-
-    LOOKUP_CACHE_ENABLED=true
-
-Other, more specific cache settings are as follows:
-
-| Name                     | Details                                          | Default |
-| ------------------------ | ------------------------------------------------ | ------- |
-| CACHE_REPO_LIST          | Cache the VCS repository names.                  | `true`  |
-| PRECACHE_REPO_LIST       | Pre-cache the VCS repository names at startup.   | `true`  |
-| CACHE_PIPELINE_BUILDS    | Cache the pipeline build metadata.               | `true`  |
-| EXPIRY_SECONDS           | Time to cache data if it is for the current day. | `3600`  |
-| REPO_LIST_EXPIRY_SECONDS | Time to cache the VCS repository names.          | `21600` |

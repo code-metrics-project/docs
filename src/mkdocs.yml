@@ -55,6 +55,7 @@ nav:
       - Datastores:
         - Datastore overview: "datastores.md"
         - Datastore collections: "datastore_collections.md"
+        - Caching: "caching.md"
       - Secrets management: "secret_management.md"
 
       - Authentication:

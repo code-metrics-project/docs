@@ -2,7 +2,9 @@
 
 As your codebase grows, so does the complexity of managing it. As an engineering leader overseeing many code repositories or multiple product teams it is challenging to know where to focus attention. At scale, it is especially hard to spot bad trends before they manifest as risks and identify areas for improvement.
 
-## Managing software at scale
+➡️ **Ready to get started?** See the [Getting started guide](./getting_started.md).
+
+---
 
 Managing a large technical solution requires metrics from across the phases of the delivery lifecycle. Meaningful understanding of the quality and risk in your codebase includes metrics about your source code, your CI/CD pipeline and your delivery process and service (such as pull requests and bugs).
 
@@ -34,7 +36,7 @@ At its core, CodeMetrics provides a collection of whole project lifecycle code q
 
 ## User documentation
 
-This documentation is intended for users of CodeMetrics, such as engineers, QA or leadership.
+This documentation is intended for users of CodeMetrics, such as engineers, QA or leadership. If you are setting up CodeMetrics for the first time, see the [Getting started guide](./getting_started.md).
 
 - [Workload summary](./workloads.md)
 - [CI/CD pipelines](./pipelines.md)
@@ -75,6 +77,7 @@ This documentation is intended for people deploying and configuring CodeMetrics.
 - [Getting started](./getting_started.md)
 - [Configuration guide](./configuration.md)
 - [Datastores](./datastores.md)
+- [Caching](./caching.md)
 - [Secrets management](./secret_management.md)
 - [Authentication](./authentication.md)
 - [Configure workloads](./config_workloads.md)
