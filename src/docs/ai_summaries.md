@@ -2,6 +2,8 @@
 
 AI Summaries provide AI-generated executive summaries of repository changes, helping teams quickly understand development activity across workloads and repositories. This feature uses large language models (LLMs) to analyse commits, pull requests, and associated tickets to produce high-level insights.
 
+> **AI Safety Notice**: AI assistants can make mistakes, produce incorrect outputs, or hallucinate information. Always verify the results returned by the AI assistant against your actual CodeMetrics data. Do not rely solely on AI-generated analysis for critical business decisions without independent verification. The AI assistant interprets your queries and constructs API calls, but may misunderstand your intent or present data incorrectly.
+
 ## Overview
 
 AI Summaries integrates with leading AI providers to automatically generate contextual summaries of repository changes over selected time periods. The feature analyses commit messages, pull request titles, and ticket information to provide an executive-level overview of what has changed, making it easier for technical and non-technical stakeholders to understand development activity without reviewing individual commits.

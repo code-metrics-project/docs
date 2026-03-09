@@ -100,4 +100,5 @@ nav:
       - Authenticating to the CodeMetrics API: "integration_api_authentication.md"
 
   - CodeMetrics and AI:
+      - AI Summaries: "ai_summaries.md"
       - MCP Server Setup: "mcp_server.md"
