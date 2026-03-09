@@ -52,7 +52,9 @@ nav:
 
   - Configuration:
       - Overview: "configuration.md"
-      - Datastores: "datastores.md"
+      - Datastores:
+        - Datastore overview: "datastores.md"
+        - Datastore collections: "datastore_collections.md"
       - Secrets management: "secret_management.md"
 
       - Authentication:
@@ -89,6 +91,7 @@ nav:
   - Other:
       - Prediction: "prediction.md"
       - Machine learning forecasts: "machine_learning.md"
+      - Internationalisation (i18n): "internationalisation.md"
 
   - Administration Portal: "admin_portal.md"
 

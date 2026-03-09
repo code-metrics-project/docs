@@ -101,6 +101,7 @@ Navigate to **Query** → **Repository Changes** to access the changes view wher
 1. **Select Parameters**: Choose your workloads, repository groups, and date range for the changes you want to analyse
 2. **Fetch Changes**: Click the "Fetch Changes" button to retrieve repository change data
 3. **View AI Summary**: Once changes are loaded, an AI-generated executive summary will automatically appear at the top of the results
+4. **Regenerate if Language Changes**: If you switch UI language after the summary is generated, click **Regenerate** in the summary card to fetch a new summary in the currently selected language
 
 ### Understanding the Summary
 
@@ -109,6 +110,7 @@ The AI-generated summary appears in a dedicated card with the following characte
 - **Visual Indicator**: Displayed with a lightbulb icon to indicate AI-generated content
 - **Executive Focus**: Summarises high-level themes and patterns across the changes
 - **Context-Aware**: Considers commit messages, pull request titles, and ticket information
+- **Language-Aware**: Summary generation uses the currently selected UI language
 - **Loading States**: Shows a progress indicator while the summary is being generated
 - **Error Handling**: Displays warnings if summary generation encounters issues
 
@@ -150,6 +152,11 @@ If the AI summary is not displayed:
 - Confirm the API key has appropriate permissions and available quota
 - Check backend logs for API connectivity or authentication errors
 - Ensure there are changes in the selected date range to summarise
+
+If the summary language does not match your current UI language:
+
+- Use the **Regenerate** button on the AI summary card after switching language
+- Confirm the language selector is enabled and the UI has switched to the target locale
 
 ### Summary Generation Errors
 
@@ -198,5 +205,4 @@ Potential future enhancements to AI Summaries may include:
 - Custom summary templates and prompts
 - Summary caching to reduce API costs
 - Configurable summary length and detail level
-- Multi-language summary generation
 - Integration with other views beyond repository changes

@@ -15,6 +15,8 @@ Configuration can be set using the `DATASTORE_IMPL` environment variable in back
 
     DATASTORE_IMPL=inmem
 
+For a full list of collections used by CodeMetrics, see [Datastore collections](datastore_collections.md).
+
 ## Auto-creation of tables and collections
 
 By default, CodeMetrics automatically creates the required datastore tables (DynamoDB) or collections (MongoDB) on first access if they do not already exist.

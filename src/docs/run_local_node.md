@@ -78,13 +78,15 @@ curl http://localhost:3000/api/health/readiness
 
 ### Frontend UI
 
-1. Download the `codemetrics-ui.zip` file from the [Releases page](https://github.com/code-metrics-project/releases/releases)
+1. Download the `codemetrics-frontend.zip` file from the [Releases page](https://github.com/code-metrics-project/releases/releases)
 2. Extract the archive:
 
 ```bash
-unzip codemetrics-ui.zip
-cd codemetrics-ui
+unzip codemetrics-frontend.zip
+cd codemetrics-frontend
 ```
+
+> Legacy fallback: if needed, `codemetrics-ui.zip` is also available.
 
 3. Configure the API endpoint:
 
