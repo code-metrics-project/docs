@@ -47,6 +47,7 @@ This documentation is intended for users of CodeMetrics, such as engineers, QA o
 - [Overview](./queries.md)
 - [Bugs and escaped bugs](./query_bugs.md)
 - [Code hotspots](./query_code_hotspots.md)
+- [Temporal coupling](./query_temporal_coupling.md)
 - [DORA metrics](./dora.md)
 - [CI/CD pipelines](./query_pipelines.md)
 - [Repository churn](./query_repo_churn.md)
@@ -100,6 +101,8 @@ This documentation is intended for people deploying and configuring CodeMetrics.
 ### Administration Portal
 
 - [Administration Portal](./admin_portal.md)
+- [Service Tokens](./service_tokens.md)
+- [Data Stores](./admin_datastores.md)
 
 ## Feature support
 

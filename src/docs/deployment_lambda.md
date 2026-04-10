@@ -94,6 +94,10 @@ You can run periodic cache updates on AWS Lambda. See [Trigger a cache refresh](
 
 ---
 
+For LocalStack-based Lambda packaging, deployment, and testing during development, see [Lambda development with LocalStack](./dev/lambda.md).
+
+---
+
 ## Summary
 
 AWS Lambda deployment offers a serverless, scalable solution for CodeMetrics with minimal operational overhead. While it introduces AWS-specific complexity and potential cold start latency, it provides excellent cost efficiency for variable workloads and integrates seamlessly with AWS services. This deployment method is particularly well-suited for teams with existing AWS infrastructure or those seeking to minimize server management responsibilities.

@@ -114,6 +114,8 @@ This example IAM policy scopes access to tables with names in the format `CodeMe
 
 </details>
 
+For local development and automated testing against DynamoDB with LocalStack, see the developer guide at [Developer datastore setup](./dev/datastores.md).
+
 ### MongoDB implementation
 
 The MongoDB implementation uses an external MongoDB instance to store data. It requires configuration of the connection and authentication details for the MongoDB server.

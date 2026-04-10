@@ -118,7 +118,7 @@ python3 -m http.server 3001
 server {
     listen 3001;
     server_name code-metrics.example.com;
-    root /path/to/codemetrics-ui;
+    root /path/to/codemetrics-frontend;
 
     location / {
         try_files $uri $uri/ /index.html;
