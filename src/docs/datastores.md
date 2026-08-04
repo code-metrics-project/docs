@@ -15,7 +15,7 @@ The following datastore implementations are supported:
 
 ## Configuration
 
-Configuration can be set using the `DATASTORE_IMPL` environment variable in backend, which accepts one of `inmem`, `mongodb` as values.
+Configuration can be set using the `DATASTORE_IMPL` environment variable in backend, which accepts one of `inmem`, `dynamodb`, `localdb`, `mongodb` as values.
 
     DATASTORE_IMPL=inmem
 
@@ -34,6 +34,13 @@ When auto-creation is disabled and a required table or collection does not exist
 This setting applies to **DynamoDB** and **MongoDB** datastores only. The in-memory and local file database implementations always create their stores automatically, as they are local/embedded.
 
 > **Note:** For MongoDB, if auto-creation is disabled and the TTL expiry index does not exist on an existing collection, a warning will be logged but the application will continue to operate. TTL-based expiration will not function until the index is created.
+
+## Manual setup of tables and collections
+
+If you disable auto-creation, you need to create tables and collections yourself with the correct schema and TTL configuration. See:
+
+- [Manual DynamoDB table setup](datastores_dynamodb_manual.md)
+- [Manual MongoDB collection setup](datastores_mongodb_manual.md)
 
 ## Datastore implementations
 
@@ -122,7 +129,7 @@ The MongoDB implementation uses an external MongoDB instance to store data. It r
 
 The following environment variables apply:
 
-    DATASTORE_IMPL=inmem
+    DATASTORE_IMPL=mongodb
     DATABASE_NAME=code-metrics
     DATABASE_URI=mongodb://code-metrics:changeme@localhost:27017
 
